@@ -1,51 +1,368 @@
 
-cookies = {
-    {
-        "domain": "vpn.nuist.edu.cn",
-        "hostOnly": 'true',
-        "httpOnly": 'false',
-        "name": "DSFirstAccess",
-        "path": "/",
-        "secure": 'true',
-        "session": 'true',
-        "storeId": "0",
-        "value": "1453363337",
-        "id": '1'
-    },
-    {
-        "domain": "vpn.nuist.edu.cn",
-        "hostOnly": 'true',
-        "httpOnly": 'false',
-        "name": "DSID",
-        "path": "/",
-        "secure": 'true',
-        "session": 'true',
-        "storeId": "0",
-        "value": "db7a0c365261957ecdeff95896979277",
-        "id": '2'
-    },
-    {
-        "domain": "vpn.nuist.edu.cn",
-        "hostOnly": 'true',
-        "httpOnly": 'false',
-        "name": "DSLastAccess",
-        "path": "/",
-        "secure": 'true',
-        "session": 'true',
-        "storeId": "0",
-        "value": "1453364366",
-        "id": '3'
-    },
-    {
-        "domain": "vpn.nuist.edu.cn",
-        "hostOnly": 'true',
-        "httpOnly": 'false',
-        "name": "DSSignInURL",
-        "path": "/",
-        "secure": 'true',
-        "session": 'true',
-        "storeId": "0",
-        "value": "/",
-        "id": '4'
-    }
-}
+# cookies = {
+#     {
+#         "domain": "vpn.nuist.edu.cn",
+#         "hostOnly": 'true',
+#         "httpOnly": 'false',
+#         "name": "DSFirstAccess",
+#         "path": "/",
+#         "secure": 'true',
+#         "session": 'true',
+#         "storeId": "0",
+#         "value": "1453363337",
+#         "id": '1'
+#     },
+#     {
+#         "domain": "vpn.nuist.edu.cn",
+#         "hostOnly": 'true',
+#         "httpOnly": 'false',
+#         "name": "DSID",
+#         "path": "/",
+#         "secure": 'true',
+#         "session": 'true',
+#         "storeId": "0",
+#         "value": "db7a0c365261957ecdeff95896979277",
+#         "id": '2'
+#     },
+#     {
+#         "domain": "vpn.nuist.edu.cn",
+#         "hostOnly": 'true',
+#         "httpOnly": 'false',
+#         "name": "DSLastAccess",
+#         "path": "/",
+#         "secure": 'true',
+#         "session": 'true',
+#         "storeId": "0",
+#         "value": "1453364366",
+#         "id": '3'
+#     },
+#     {
+#         "domain": "vpn.nuist.edu.cn",
+#         "hostOnly": 'true',
+#         "httpOnly": 'false',
+#         "name": "DSSignInURL",
+#         "path": "/",
+#         "secure": 'true',
+#         "session": 'true',
+#         "storeId": "0",
+#         "value": "/",
+#         "id": '4'
+#     }
+# }
+
+content = """
+
+
+<!-- saved from url=(0187)https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=E&searchby=N&hothigh=H&searchtitle=web&searchscientist=&searchinst=&searchcountry=&searchjournal=&x=39&y=6 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>Essential Science Indicators Version 2.3</title><meta http-equiv="pragma" content="no-cache"><script language="javascript" id="dsshim" src="./Essential Science Indicators Version 2.3_files/shimdata.cgi"></script><script language="javascript" id="dsfunc" src="./Essential Science Indicators Version 2.3_files/oth.js"></script><script language="javascript" id="dstimeout" src="./Essential Science Indicators Version 2.3_files/sessiontimeout.js"></script><script language="javascript" id="dsvar">
+//<![CDATA[
+var dsnodocwrites = 0 ; var DanaCookie="session_id=P1XMQ91iKwwEiwWyhjO; SID=\"P1XMQ91iKwwEiwWyhjO\"; $Path=\"\/\"; $Domain=\".webofknowledge.com\"; CUSTOMER=\"NANJING UNIV OF INFO SCI AND TECH\"; $Path=\"\/\"; $Domain=\".webofknowledge.com\"; E_GROUP_NAME=\"NANJING UNIV OF INFO SCI & TECH\"; $Path=\"\/\"; $Domain=\".webofknowledge.com\""; var DSHost="vpn.nuist.edu.cn"; var DSObfuscateHostname=1;var DSTBSettings=20497;var DSTBLU='/dana/home/starter.cgi?startpageonly=1';;danaSetDSHost();
+//]]>
+</script><style type="text/css"></style></head><body bgcolor="#FFFFFF" style="margin-top: 0px; cursor: default;"><div id="dsl0" style="width: auto; height: auto; position: absolute; top: 0px; left: 878px; visibility: visible; padding: 1px; z-index: 500000; margin: 0px;"><table style="width=auto;height:auto;background-color:#EEEEEE; padding:0px 0px 0px 0px; border:1px ridge #666666; text-align:center; vertical-align:middle;table-layout:auto;margin: 0px 0px 0px 0px;"><tbody style="width=auto;height:auto;background-color:#EEEEEE; padding:0px 0px 0px 0px; border:1px ridge #666666; text-align:center; vertical-align:middle;table-layout:auto;margin: 0px 0px 0px 0px;"><tr style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;"><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;vertical-align:middle;text-align:center;"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=E&amp;searchby=N&amp;hothigh=H&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;x=39&amp;y=6#" onclick="RepositionTlb();return false;"><img style="margin: 0px 0px 0px 0px;border:0;width:9px;height:24px" src="./Essential Science Indicators Version 2.3_files/smallposition.gif" alt="Reposition toolbar"></a></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;background-color:#CCCCCC;"><img style="border:0;margin: 0px 0px 0px 0px;width:1px;height:1px;" src="./Essential Science Indicators Version 2.3_files/space.gif"></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;"><img style="border:0;margin: 0px 0px 0px 0px;width:2px;height:1px;" src="./Essential Science Indicators Version 2.3_files/space.gif"></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;"><a href="https://vpn.nuist.edu.cn/dana/home/starter.cgi?startpageonly=1" target="_top"><img style="margin: 0px 0px 0px 0px;border:0;" src="./Essential Science Indicators Version 2.3_files/welcome.cgi" alt="Home" title="Home"></a></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;"><img style="border:0;margin: 0px 0px 0px 0px;width:2px;height:1px;" src="./Essential Science Indicators Version 2.3_files/space.gif"></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;background-color:#CCCCCC;"><img style="border:0;margin: 0px 0px 0px 0px;width:1px;height:1px;" src="./Essential Science Indicators Version 2.3_files/space.gif"></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;vertical-align:middle;text-align:center;"><a href="javascript:DSECTB(&#39;https://vpn.nuist.edu.cn&#39;);"><img style="margin: 0px 0px 0px 0px;border:0;width:10px;height:18px;" src="./Essential Science Indicators Version 2.3_files/tbrContract.gif" alt="Expand/Collapse" id="dsBtnEC" title="Expand/Collapse"></a></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;" id="dslMain"><table style="margin: 0px 0px 0px 0px;cellPadding:0px;cellSpacing:0px;border:0px;width:auto;table-layout:auto;"><tbody><tr style="margin: 0px 0px 0px 0px;"><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;background-color:#666666;"><img style="border:0;margin: 0px 0px 0px 0px;width:1px;height:1px;" src="./Essential Science Indicators Version 2.3_files/space.gif"></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;"><img style="border:0;margin: 0px 0px 0px 0px;width:2px;height:1px;" src="./Essential Science Indicators Version 2.3_files/space.gif"></td><td><a href="https://vpn.nuist.edu.cn/dana-cached/help/SA-User-Help/index.html?context=Secure_Gateway_Help&amp;topic=introduction" target="wndHelp" onclick="window.open(&#39;https://vpn.nuist.edu.cn/dana-cached/help/SA-User-Help/index.html?context=Secure_Gateway_Help&amp;topic=introduction&#39;,&#39;wndHelp&#39;,&#39;width=590,height=600,toolbar=1,status=1,scrollbars=1,resizable=1&#39;); return false;"><img style="margin: 0px 0px 0px 0px;border:0;width:24px;height:24px;" src="./Essential Science Indicators Version 2.3_files/btnNavHelp.gif" alt="Help" title="Help"></a></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;"><img style="border:0;margin: 0px 0px 0px 0px;width:2px;height:1px;" src="./Essential Science Indicators Version 2.3_files/space.gif"></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;background-color:#CCCCCC;"><img style="border:0;margin: 0px 0px 0px 0px;width:1px;height:1px;" src="./Essential Science Indicators Version 2.3_files/space.gif"></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;"><img style="border:0;margin: 0px 0px 0px 0px;width:2px;height:1px;" src="./Essential Science Indicators Version 2.3_files/space.gif"></td><td><a href="https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi" target="_top"><img style="margin: 0px 0px 0px 0px;border:0;width:24px;height:24px;" src="./Essential Science Indicators Version 2.3_files/btnNavSignOut.gif" alt="Sign out" title="Sign out"></a></td><td style="padding:0px 0px 0px 0px; border:0px; margin:0px 0px 0px 0px; text-align:center; vertical-align:middle;margin: 0px 0px 0px 0px;"><img style="border:0;margin: 0px 0px 0px 0px;width:2px;height:1px;" src="./Essential Science Indicators Version 2.3_files/space.gif"></td></tr></tbody></table></td></tr></tbody></table></div>	<div style="background-image: url(../images/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+wok_logo_bk.gif); background-repeat: repeat; margin-bottom: 5px; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 9px; margin-left: -10px;"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+wok_logo_jcr.gif" alt="ISI Web of Knowledge" align="bottom" title="ISI Web of Knowledge"></div>
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tbody><tr bgcolor="#ffffff">
+			<td><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+isihdr.gif" border="0" alt="Essential Science Indicators" title="Essential Science Indicators" align="bottom"></td>
+		</tr>
+	</tbody></table>
+
+        <table cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+        <tbody><tr>
+
+	    <td>
+     	   <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+home.cgi"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+tbhome.gif" border="0" alt="ESI Home" title="ESI Home"></a>
+            </td>
+          <td>
+          <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+help.cgi?sourceprogram=paperpage.cgi[E]">
+          <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+tbhelp.gif" border="0" alt="Help" title="Help"></a>
+          </td>
+       <td>
+       <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+highimpacthotpapersmenu.cgi?option=H">
+       <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+tbmenu.gif" border="0" alt="Return to Menu" title="Return to Menu"></a>
+       </td>
+      <td>
+      <a href="https://vpn.nuist.edu.cn/papers/,DanaInfo=.aioAfmykzHlyx+" target="urlincites">
+      <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+tbincite.gif" border="0" alt="To in-cites" title="To in-cites"></a>
+      </td>
+
+        </tr>
+        </tbody></table>
+
+<hr> <table border="0" cellpadding="5" cellspacing="0" width="100%"><tbody><tr align="center">
+        <td bgcolor="#FFFFFF" colspan="2">
+	<b>
+	<font size="+1" color="#000000" face="times new roman">
+	HOT PAPERS
+	</font>
+  FOR
+ <font size="+1">
+  (WEB)
+  </font>
+	</b>
+        </td>
+        </tr>
+</tbody></table>	        <table align="center" border="1" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+		<form name="frmSort" method="get"></form>
+                <td bgcolor="#FFFFCC" colspan="3">
+                 <table width="100%" border="0" cellspacing="0" cellpadding="2">
+                    <tbody><tr><td colspan="3" align="center"><b>Sorted by:</b>
+                    <select name="sortby">
+
+   <option value="1" selected="">Citations</option>    <option value="2">Publication Year</option>   <option value="3">Journal Title</option></select>                  <input type="image" src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+newsort.gif" border="0" align="absmiddle" alt="Sort Again" title="Sort Again">
+                  <input type="hidden" name="option" value="E">
+                  <input type="hidden" name="search" value="">
+                  <input type="hidden" name="searchtitle" value="web">
+                  <input type="hidden" name="searchscientist" value="">
+		  <input type="hidden" name="searchinst" value="">
+                  <input type="hidden" name="searchcountry" value="">
+                  <input type="hidden" name="searchjournal" value="">
+  		    <input type="hidden" name="searchby" value="N">
+		    <input type="hidden" name="hothigh" value="H">
+
+              </td></tr></tbody></table></td>
+
+      </tr>
+        <tr> <td nowrap="">
+                     <table width="100%" border="0" cellpadding="2" cellspacing="0">
+	             <tbody><tr valign="center">
+	             <td>&nbsp;1 - 8 (of 8) </td>
+	             <td>
+	             <center>
+	             <table border="0" cellspacing="0" cellpadding="0" align="center">
+	             <tbody><tr align="middle" valign="center">
+	            <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+first10i.gif" width="19" height="24" alt="First Page (Inactive)" title="First Page (Inactive)" align="bottom" border="0" vspace="1" hspace="1">
+     	                 </td> <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+back10i.gif" alt="Back 10 Pages (Inactive)" title="Back 10 Pages (Inactive)" align="bottom" border="0" vspace="1" hspace="1"></td> <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+prevpgi.gif" alt="Previous Page (Inactive)" title="Previous Page (Inactive)" align="bottom" border="0" vspace="1" hspace="1">
+			</td> <td> [ </td> <td> <i>1</i>   ] </td>  <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+nextpgi.gif" alt="Next Page (Inactive)" title="Next Page (Inactive)" align="bottom" border="0" vspace="1" hspace="1"></td> <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+frwrd10i.gif" alt="Forward 10 Pages (Inactive)" title="Forward 10 Pages (Inactive)" align="bottom" border="0" vspace="1" hspace="1"> </td> <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+last10i.gif" alt="Last Page (Inactive)" title="Last Page (Inactive)" align="bottom" border="0" vspace="1" hspace="1"></td> </tr> </tbody></table> </center> </td> <td align="right">
+		      Page 1 of 1
+		      &nbsp;</td> </tr> </tbody></table> </td> </tr>
+
+      <tr>
+        <td colspan="3">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0">	</table><table width="100%" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr><td>1
+           <b>&nbsp;&nbsp;&nbsp;Citations: </b>71	<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000336427400017&amp;from=paperpage&amp;hothigh=H&amp;name=(WEB)%20&amp;option=E&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;sortby=1&amp;currpage=1&amp;graph_type=yearly">
+                <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+graphs.gif" border="0" alt="View Graphs" title="View Graphs"></a>
+   	        </td> <td align="right">
+           <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000336427400017&amp;option=E&amp;from=paperpage&amp;hoticon=Y&amp;hothigh=H&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;graph_type=bimonthly"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hot_paper.gif" border="0" alt="View the Hot Paper graph" title="View the Hot Paper graph"></a> <a href="https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?&amp;GWVersion=2&amp;SrcAuth=ESI&amp;SrcApp=ESI&amp;DestLinkType=FullRecord&amp;DestApp=WOS&amp;SrcAppSID=P1XMQ91iKwwEiwWyhjO&amp;SrcDesc=RETURN_ALT_TEXT&amp;SrcURL=http%3A//esi.webofknowledge.com/paperpage.cgi%3Foption%3DE%26searchby%3DN%26hothigh%3DH%26searchtitle%3Dweb%26searchscientist%3D%26searchinst%3D%26searchcountry%3D%26searchjournal%3D%26x%3D39%26y%3D6&amp;KeyUT=000336427400017&amp;SrcImageURL=">
+          <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+gotowos.gif" border="0" alt="View Full Record in Web of Science" title="View Full Record in Web of Science"></a>
+    </td></tr>
+   </tbody></table>
+   <table width="100%" bgcolor="#FFFFFF" cellspacing="0">
+   <tbody><tr><td width="20%" valign="top"><b>Title:</b></td><td width="80%">INTERFERON-STIMULATED GENES: A COMPLEX <strong>WEB</strong> OF HOST DEFENSES&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Authors:</b></td><td width="80%">SCHNEIDER WM; &nbsp;CHEVILLOTTE MD; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=RICE%2C%20CM&amp;searchby=N">RICE CM </a> &nbsp;&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Source:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=J&amp;search=ANNU%20REV%20IMMUNOL&amp;searchby=N">ANNU REV IMMUNOL</a> 32: 513-545 2014&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Addresses:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=ROCKEFELLER%20UNIV&amp;searchby=N"> Rockefeller Univ,</a> Lab Virol &amp; Infect Dis, New York,&nbsp; NY 10065 USA.<br></td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Field:</b></td><td width="80%">
+       <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=H&amp;search=IMMUNOLOGY&amp;searchby=F&amp;hothigh=H&amp;article_id=000336427400017">
+	IMMUNOLOGY&nbsp;</a><br>
+
+    <br></td></tr>
+    </tbody></table>
+  	<table width="100%" bgcolor="#FFFFCC" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr><td>2
+           <b>&nbsp;&nbsp;&nbsp;Citations: </b>26	<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000331672500010&amp;from=paperpage&amp;hothigh=H&amp;name=(WEB)%20&amp;option=E&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;sortby=1&amp;currpage=1&amp;graph_type=yearly">
+                <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+graphs.gif" border="0" alt="View Graphs" title="View Graphs"></a>
+   	        </td> <td align="right">
+           <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000331672500010&amp;option=E&amp;from=paperpage&amp;hoticon=Y&amp;hothigh=H&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;graph_type=bimonthly"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hot_paper.gif" border="0" alt="View the Hot Paper graph" title="View the Hot Paper graph"></a> <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+researchfront.cgi?researchfrontid=18788&amp;option=R&amp;rficon=Y"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+research_front.gif" border="0" alt="View the Research Front" title="View the Research Front"></a> <a href="https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?&amp;GWVersion=2&amp;SrcAuth=ESI&amp;SrcApp=ESI&amp;DestLinkType=FullRecord&amp;DestApp=WOS&amp;SrcAppSID=P1XMQ91iKwwEiwWyhjO&amp;SrcDesc=RETURN_ALT_TEXT&amp;SrcURL=http%3A//esi.webofknowledge.com/paperpage.cgi%3Foption%3DE%26searchby%3DN%26hothigh%3DH%26searchtitle%3Dweb%26searchscientist%3D%26searchinst%3D%26searchcountry%3D%26searchjournal%3D%26x%3D39%26y%3D6&amp;KeyUT=000331672500010&amp;SrcImageURL=">
+          <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+gotowos.gif" border="0" alt="View Full Record in Web of Science" title="View Full Record in Web of Science"></a>
+    </td></tr>
+   </tbody></table>
+   <table width="100%" bgcolor="#FFFFCC" cellspacing="0">
+   <tbody><tr><td width="20%" valign="top"><b>Title:</b></td><td width="80%">INGESTION AND TRANSFER OF MICROPLASTICS IN THE PLANKTONIC FOOD <strong>WEB</strong>&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Authors:</b></td><td width="80%">SETALA O; &nbsp;FLEMING-LEHTINEN V; &nbsp;LEHTINIEMI M &nbsp;&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Source:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=J&amp;search=ENVIRON%20POLLUT&amp;searchby=N">ENVIRON POLLUT</a> 185: 77-83 FEB 2014&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Addresses:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=FINNISH%20ENVIRONM%20INST&amp;searchby=N"> Finnish Environm Inst,</a> Ctr Marine Res, FI-00251 Helsinki,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=FINLAND&amp;searchby=N">Finland.</a><br></td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Field:</b></td><td width="80%">
+       <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=H&amp;search=ENVIRONMENT/ECOLOGY&amp;searchby=F&amp;hothigh=H&amp;article_id=000331672500010">
+	ENVIRONMENT/ECOLOGY&nbsp;</a><br>
+
+    <br></td></tr>
+    </tbody></table>
+  	<table width="100%" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr><td>3
+           <b>&nbsp;&nbsp;&nbsp;Citations: </b>23	<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000345031300001&amp;from=paperpage&amp;hothigh=H&amp;name=(WEB)%20&amp;option=E&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;sortby=1&amp;currpage=1&amp;graph_type=yearly">
+                <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+graphs.gif" border="0" alt="View Graphs" title="View Graphs"></a>
+   	        </td> <td align="right">
+           <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000345031300001&amp;option=E&amp;from=paperpage&amp;hoticon=Y&amp;hothigh=H&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;graph_type=bimonthly"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hot_paper.gif" border="0" alt="View the Hot Paper graph" title="View the Hot Paper graph"></a> <a href="https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?&amp;GWVersion=2&amp;SrcAuth=ESI&amp;SrcApp=ESI&amp;DestLinkType=FullRecord&amp;DestApp=WOS&amp;SrcAppSID=P1XMQ91iKwwEiwWyhjO&amp;SrcDesc=RETURN_ALT_TEXT&amp;SrcURL=http%3A//esi.webofknowledge.com/paperpage.cgi%3Foption%3DE%26searchby%3DN%26hothigh%3DH%26searchtitle%3Dweb%26searchscientist%3D%26searchinst%3D%26searchcountry%3D%26searchjournal%3D%26x%3D39%26y%3D6&amp;KeyUT=000345031300001&amp;SrcImageURL=">
+          <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+gotowos.gif" border="0" alt="View Full Record in Web of Science" title="View Full Record in Web of Science"></a>
+    </td></tr>
+   </tbody></table>
+   <table width="100%" bgcolor="#FFFFFF" cellspacing="0">
+   <tbody><tr><td width="20%" valign="top"><b>Title:</b></td><td width="80%">BEST PRACTICES FOR USE OF STABLE ISOTOPE MIXING MODELS IN FOOD-<strong>WEB</strong> STUDIES&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Authors:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=PHILLIPS%2C%20DL&amp;searchby=N">PHILLIPS DL; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=INGER%2C%20R&amp;searchby=N">INGER R; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=BEARHOP%2C%20S&amp;searchby=N">BEARHOP S; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=JACKSON%2C%20AL&amp;searchby=N">JACKSON AL; </a> &nbsp;MOORE JW; &nbsp;PARNELL AC; &nbsp;SEMMENS BX; &nbsp;WARD EJ &nbsp;&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Source:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=J&amp;search=CAN%20J%20ZOOL&amp;searchby=N">CAN J ZOOL</a> 92 (10): 823-835 OCT 2014&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Addresses:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=US%20EPA&amp;searchby=N"> US EPA,</a> Natl Hlth &amp; Environm Effects Res Lab, Western Ecol Div, Corvallis,&nbsp; OR 97330 USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20EXETER&amp;searchby=N"> Univ Exeter,</a> Sch Biosci, Environm &amp; Sustainabil Inst, Penryn TR10 9EZ, Cornwall,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=ENGLAND&amp;searchby=N">England.</a><br>Univ Dublin Trinity Coll, Sch Nat Sci, Dept Zool, Dublin 2,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=IRELAND&amp;searchby=N">Ireland.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=SIMON%20FRASER%20UNIV&amp;searchby=N"> Simon Fraser Univ,</a> Dept Biol Sci, Burnaby, BC V5A 1S6,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=CANADA&amp;searchby=N">Canada.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20COLL%20DUBLIN&amp;searchby=N"> Univ Coll Dublin,</a> Sch Math Sci Stat, Complex &amp; Adapt Syst Lab, Dublin 4,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=IRELAND&amp;searchby=N">Ireland.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20CALIF%20SAN%20DIEGO&amp;searchby=N"> Univ Calif San Diego,</a> Scripps Inst Oceanog, La Jolla,&nbsp; CA 92093 USA.<br>NOAA, NW Fisheries Sci Ctr, Natl Marine Fisheries Serv, Seattle,&nbsp; WA 98112 USA.<br></td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Field:</b></td><td width="80%">
+       <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=H&amp;search=PLANT%201111AND1111%20ANIMAL%20SCIENCE&amp;searchby=F&amp;hothigh=H&amp;article_id=000345031300001">
+	PLANT &amp; ANIMAL SCIENCE&nbsp;</a><br>
+
+    <br></td></tr>
+    </tbody></table>
+  	<table width="100%" bgcolor="#FFFFCC" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr><td>4
+           <b>&nbsp;&nbsp;&nbsp;Citations: </b>21	<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000355245200002&amp;from=paperpage&amp;hothigh=H&amp;name=(WEB)%20&amp;option=E&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;sortby=1&amp;currpage=1&amp;graph_type=yearly">
+                <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+graphs.gif" border="0" alt="View Graphs" title="View Graphs"></a>
+   	        </td> <td align="right">
+           <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000355245200002&amp;option=E&amp;from=paperpage&amp;hoticon=Y&amp;hothigh=H&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;graph_type=bimonthly"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hot_paper.gif" border="0" alt="View the Hot Paper graph" title="View the Hot Paper graph"></a> <a href="https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?&amp;GWVersion=2&amp;SrcAuth=ESI&amp;SrcApp=ESI&amp;DestLinkType=FullRecord&amp;DestApp=WOS&amp;SrcAppSID=P1XMQ91iKwwEiwWyhjO&amp;SrcDesc=RETURN_ALT_TEXT&amp;SrcURL=http%3A//esi.webofknowledge.com/paperpage.cgi%3Foption%3DE%26searchby%3DN%26hothigh%3DH%26searchtitle%3Dweb%26searchscientist%3D%26searchinst%3D%26searchcountry%3D%26searchjournal%3D%26x%3D39%26y%3D6&amp;KeyUT=000355245200002&amp;SrcImageURL=">
+          <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+gotowos.gif" border="0" alt="View Full Record in Web of Science" title="View Full Record in Web of Science"></a>
+    </td></tr>
+   </tbody></table>
+   <table width="100%" bgcolor="#FFFFCC" cellspacing="0">
+   <tbody><tr><td width="20%" valign="top"><b>Title:</b></td><td width="80%">THE PHYRE2 <strong>WEB</strong> PORTAL FOR PROTEIN MODELING, PREDICTION AND ANALYSIS&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Authors:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=KELLEY%2C%20LA&amp;searchby=N">KELLEY LA; </a> &nbsp;MEZULIS S; &nbsp;YATES CM; &nbsp;WASS MN; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=STERNBERG%2C%20MJE&amp;searchby=N">STERNBERG MJE </a> &nbsp;&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Source:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=J&amp;search=NAT%20PROTOC&amp;searchby=N">NAT PROTOC</a> 10 (6): 845-858 JUN 2015&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Addresses:</b></td><td width="80%">Univ London Imperial Coll Sci Technol &amp; Med, Struct Bioinformat Grp, London,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=ENGLAND&amp;searchby=N">England.</a><br></td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Field:</b></td><td width="80%">
+       <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=H&amp;search=BIOLOGY%201111AND1111%20BIOCHEMISTRY&amp;searchby=F&amp;hothigh=H&amp;article_id=000355245200002">
+	BIOLOGY &amp; BIOCHEMISTRY&nbsp;</a><br>
+
+    <br></td></tr>
+    </tbody></table>
+  	<table width="100%" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr><td>5
+           <b>&nbsp;&nbsp;&nbsp;Citations: </b>9	<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000352304200006&amp;from=paperpage&amp;hothigh=H&amp;name=(WEB)%20&amp;option=E&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;sortby=1&amp;currpage=1&amp;graph_type=yearly">
+                <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+graphs.gif" border="0" alt="View Graphs" title="View Graphs"></a>
+   	        </td> <td align="right">
+           <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000352304200006&amp;option=E&amp;from=paperpage&amp;hoticon=Y&amp;hothigh=H&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;graph_type=bimonthly"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hot_paper.gif" border="0" alt="View the Hot Paper graph" title="View the Hot Paper graph"></a> <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+researchfront.cgi?researchfrontid=10392&amp;option=R&amp;rficon=Y"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+research_front.gif" border="0" alt="View the Research Front" title="View the Research Front"></a> <a href="https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?&amp;GWVersion=2&amp;SrcAuth=ESI&amp;SrcApp=ESI&amp;DestLinkType=FullRecord&amp;DestApp=WOS&amp;SrcAppSID=P1XMQ91iKwwEiwWyhjO&amp;SrcDesc=RETURN_ALT_TEXT&amp;SrcURL=http%3A//esi.webofknowledge.com/paperpage.cgi%3Foption%3DE%26searchby%3DN%26hothigh%3DH%26searchtitle%3Dweb%26searchscientist%3D%26searchinst%3D%26searchcountry%3D%26searchjournal%3D%26x%3D39%26y%3D6&amp;KeyUT=000352304200006&amp;SrcImageURL=">
+          <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+gotowos.gif" border="0" alt="View Full Record in Web of Science" title="View Full Record in Web of Science"></a>
+    </td></tr>
+   </tbody></table>
+   <table width="100%" bgcolor="#FFFFFF" cellspacing="0">
+   <tbody><tr><td width="20%" valign="top"><b>Title:</b></td><td width="80%">NEW TOOLS FOR MENDELIAN DISEASE GENE IDENTIFICATION: PHENODB VARIANT ANALYSIS MODULE, AND GENEMATCHER, A <strong>WEB</strong>-BASED TOOL FOR LINKING INVESTIGATORS WITH AN INTEREST IN THE SAME GENE&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Authors:</b></td><td width="80%">SOBREIRA N; &nbsp;SCHIETTECATTE F; &nbsp;BOEHM C; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=VALLE%2C%20D&amp;searchby=N">VALLE D; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=HAMOSH%2C%20A&amp;searchby=N">HAMOSH A </a> &nbsp;&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Source:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=J&amp;search=HUM%20MUTAT&amp;searchby=N">HUM MUTAT</a> 36 (4): 425-431 APR 2015&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Addresses:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=JOHNS%20HOPKINS%20UNIV&amp;searchby=N"> Johns Hopkins Univ,</a> McKusick Nathans Inst Genet Med, Sch Med, Baltimore,&nbsp; MD 21205 USA.<br>FS Consulting LLC, Salem,&nbsp; MA 01970 USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=JOHNS%20HOPKINS%20UNIV&amp;searchby=N"> Johns Hopkins Univ,</a> Dept Pediat, Sch Med, Baltimore,&nbsp; MD 21205 USA.<br></td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Field:</b></td><td width="80%">
+       <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=H&amp;search=MOLECULAR%20BIOLOGY%201111AND1111%20GENETICS&amp;searchby=F&amp;hothigh=H&amp;article_id=000352304200006">
+	MOLECULAR BIOLOGY &amp; GENETICS&nbsp;</a><br>
+
+    <br></td></tr>
+    </tbody></table>
+  	<table width="100%" bgcolor="#FFFFCC" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr><td>6
+           <b>&nbsp;&nbsp;&nbsp;Citations: </b>8	<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000352268900018&amp;from=paperpage&amp;hothigh=H&amp;name=(WEB)%20&amp;option=E&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;sortby=1&amp;currpage=1&amp;graph_type=yearly">
+                <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+graphs.gif" border="0" alt="View Graphs" title="View Graphs"></a>
+   	        </td> <td align="right">
+           <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000352268900018&amp;option=E&amp;from=paperpage&amp;hoticon=Y&amp;hothigh=H&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;graph_type=bimonthly"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hot_paper.gif" border="0" alt="View the Hot Paper graph" title="View the Hot Paper graph"></a> <a href="https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?&amp;GWVersion=2&amp;SrcAuth=ESI&amp;SrcApp=ESI&amp;DestLinkType=FullRecord&amp;DestApp=WOS&amp;SrcAppSID=P1XMQ91iKwwEiwWyhjO&amp;SrcDesc=RETURN_ALT_TEXT&amp;SrcURL=http%3A//esi.webofknowledge.com/paperpage.cgi%3Foption%3DE%26searchby%3DN%26hothigh%3DH%26searchtitle%3Dweb%26searchscientist%3D%26searchinst%3D%26searchcountry%3D%26searchjournal%3D%26x%3D39%26y%3D6&amp;KeyUT=000352268900018&amp;SrcImageURL=">
+          <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+gotowos.gif" border="0" alt="View Full Record in Web of Science" title="View Full Record in Web of Science"></a>
+    </td></tr>
+   </tbody></table>
+   <table width="100%" bgcolor="#FFFFCC" cellspacing="0">
+   <tbody><tr><td width="20%" valign="top"><b>Title:</b></td><td width="80%">EVPEDIA: A COMMUNITY <strong>WEB</strong> PORTAL FOR EXTRACELLULAR VESICLES RESEARCH&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Authors:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=KIM%2C%20DK&amp;searchby=N">KIM DK; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=LEE%2C%20J&amp;searchby=N">LEE J; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=KIM%2C%20SR&amp;searchby=N">KIM SR; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=CHOI%2C%20DS&amp;searchby=N">CHOI DS; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=YOON%2C%20YJ&amp;searchby=N">YOON YJ; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=KIM%2C%20JH&amp;searchby=N">KIM JH; </a> &nbsp;GO G; &nbsp;NHUNG D; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=HONG%2C%20K&amp;searchby=N">HONG K; </a> &nbsp;JANG SC; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=KIM%2C%20SH&amp;searchby=N">KIM SH; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=PARK%2C%20KS&amp;searchby=N">PARK KS; </a> &nbsp;KIM OY; &nbsp;PARK HT; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=SEO%2C%20JH&amp;searchby=N">SEO JH; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=AIKAWA%2C%20E&amp;searchby=N">AIKAWA E; </a> &nbsp;BAJ-KRZYWORZEKA M; &nbsp;VAN BALKOM BWM; &nbsp;BELTING M; &nbsp;BLANC L; &nbsp;BOND V; &nbsp;BONGIOVANNI A; &nbsp;BORRAS FE; &nbsp;BUEE L; &nbsp;BUZAS EI; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=CHENG%2C%20L&amp;searchby=N">CHENG L; </a> &nbsp;CLAYTON A; &nbsp;COCUCCI E; &nbsp;DELA CRUZ CS; &nbsp;DESIDERIO DM; &nbsp;DI VIZIO D; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=EKSTROM%2C%20K&amp;searchby=N">EKSTROM K; </a> &nbsp;FALCON-PEREZ JM; &nbsp;GARDINER C; &nbsp;GIEBEL B; &nbsp;GREENING DW; &nbsp;GROSS JC; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=GUPTA%2C%20D&amp;searchby=N">GUPTA D; </a> &nbsp;HENDRIX A; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=HILL%2C%20AF&amp;searchby=N">HILL AF; </a> &nbsp;HILL MM; &nbsp;HOEN EN; &nbsp;HWANG DW; &nbsp;INAL J; &nbsp;JAGANNADHAM MV; &nbsp;JAYACHANDRAN M; &nbsp;JEE YK; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=JORGENSEN%2C%20M&amp;searchby=N">JORGENSEN M; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=KIM%2C%20KP&amp;searchby=N">KIM KP; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=KIM%2C%20YK&amp;searchby=N">KIM YK; </a> &nbsp;KISLINGER T; &nbsp;LASSER C; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=LEE%2C%20DS&amp;searchby=N">LEE DS; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=LEE%2C%20H&amp;searchby=N">LEE H; </a> &nbsp;VAN LEEUWEN J; &nbsp;LENER T; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=LIU%2C%20ML&amp;searchby=N">LIU ML; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=LOTVALL%2C%20J&amp;searchby=N">LOTVALL J; </a> &nbsp;MARCILLA A; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=MATHIVANAN%2C%20S&amp;searchby=N">MATHIVANAN S; </a> &nbsp;MOLLER A; &nbsp;MORHAYIM J; &nbsp;MULLIER F; &nbsp;NAZARENKO I; &nbsp;NIEUWLAND R; &nbsp;NUNES DN; &nbsp;PANG K; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=PARK%2C%20J&amp;searchby=N">PARK J; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=PATEL%2C%20T&amp;searchby=N">PATEL T; </a> &nbsp;POCSFALVI G; &nbsp;DEL PORTILLO H; &nbsp;PUTZ U; &nbsp;RAMIREZ MI; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=RODRIGUES%2C%20ML&amp;searchby=N">RODRIGUES ML; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=ROH%2C%20TY&amp;searchby=N">ROH TY; </a> &nbsp;ROYO F; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=SAHOO%2C%20S&amp;searchby=N">SAHOO S; </a> &nbsp;SCHIFFELERS R; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=SHARMA%2C%20S&amp;searchby=N">SHARMA S; </a> &nbsp;SILJANDER P; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=SIMPSON%2C%20RJ&amp;searchby=N">SIMPSON RJ; </a> &nbsp;SOEKMADJI C; &nbsp;STAHL P; &nbsp;STENSBALLE A; &nbsp;STEPIEN E; &nbsp;TAHARA H; &nbsp;TRUMMER A; &nbsp;VALADI H; &nbsp;VELLA LJ; &nbsp;WAI SN; &nbsp;WITWER K; &nbsp;YANEZ-MO M; &nbsp;YOUN H; &nbsp;ZEIDLER R; &nbsp;GHO YS &nbsp;&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Source:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=J&amp;search=BIOINFORMATICS&amp;searchby=N">BIOINFORMATICS</a> 31 (6): 933-939 MAR 15 2015&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Addresses:</b></td><td width="80%">Pohang Univ Sci &amp; Technol, Dept Life Sci, Pohang,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SOUTH%20KOREA&amp;searchby=N">South Korea.</a><br>Pohang Univ Sci &amp; Technol, Div Integrat Biosci &amp; Biotechnol, Pohang,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SOUTH%20KOREA&amp;searchby=N">South Korea.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=HARVARD%20UNIV&amp;searchby=N"> Harvard Univ,</a> Sch Med, Brigham &amp; Womens Hosp, Cardiovasc Med, Boston,&nbsp; MA USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=JAGIELLONIAN%20UNIV&amp;searchby=N"> Jagiellonian Univ,</a> Coll Med, Polish Amer Inst Paediat, Dept Clin Immunol, Krakow,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=POLAND&amp;searchby=N">Poland.</a><br>Univ Med Ctr Utrecht, Dept Hypertens &amp; Nephrol, Utrecht,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=NETHERLANDS&amp;searchby=N">Netherlands.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=LUND%20UNIV&amp;searchby=N"> Lund Univ,</a> Dept Clin Sci, Sect Oncol, Lund,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SWEDEN&amp;searchby=N">Sweden.</a><br>Feinstein Inst Med Res, Manhasset,&nbsp; NY USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=MOREHOUSE%20SCH%20MED&amp;searchby=N"> Morehouse Sch Med,</a> Dept Microbiol Biochem &amp; Immunol, Atlanta,&nbsp; GA 30310 USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=CNR&amp;searchby=N"> CNR,</a> Inst Biomed &amp; Mol Immunol IBIM, Palermo,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=ITALY&amp;searchby=N">Italy.</a><br>Germans Trias &amp; Pujol Univ Hosp, Germans Trias &amp; Pujol Res Inst, Innovat Vesicles &amp; Cells Applicat Therapy, Badalona,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SPAIN&amp;searchby=N">Spain.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=INSERM&amp;searchby=N"> INSERM,</a> JEAN PIERRE Aubert Res Ctr, UMR837, F-59045 Lille,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=FRANCE&amp;searchby=N">France.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=SEMMELWEIS%20UNIV&amp;searchby=N"> Semmelweis Univ,</a> Dept Genet Cell &amp; Immunobiol, H-1085 Budapest,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=HUNGARY&amp;searchby=N">Hungary.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20MELBOURNE&amp;searchby=N"> Univ Melbourne,</a> Dept Biochem &amp; Mol Biol, Mol Sci &amp; Biotechnol Inst Bio21, Melbourne, Vic,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRALIA&amp;searchby=N">Australia.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=CARDIFF%20UNIV&amp;searchby=N"> Cardiff Univ,</a> Sch Med, Velindre Canc Ctr, Inst Canc &amp; Genet, Cardiff CF10 3AX, S Glam,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=WALES&amp;searchby=N">Wales.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=HARVARD%20UNIV&amp;searchby=N"> Harvard Univ,</a> Sch Med, Boston Childrens Hosp, Program Cellular &amp; Mol Med, Boston,&nbsp; MA USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=HARVARD%20UNIV&amp;searchby=N"> Harvard Univ,</a> Sch Med, Dept Cell Biol, Boston,&nbsp; MA USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=YALE%20UNIV&amp;searchby=N"> Yale Univ,</a> Sch Med, Dept Internal Med, Sect Pulm Crit Care &amp; Sleep Med, New Haven,&nbsp; CT 06510 USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20TENNESSEE&amp;searchby=N"> Univ Tennessee,</a> Hlth Sci Ctr, Coll Med, Dept Neurol, Memphis,&nbsp; TN USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=CEDARS%20SINAI%20MED%20CTR&amp;searchby=N"> Cedars Sinai Med Ctr,</a> Samuel Oschin Comprehens Canc Inst, Canc Biol Program, Los Angeles,&nbsp; CA 90048 USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20GOTHENBURG&amp;searchby=N"> Univ Gothenburg,</a> Inst Clin Sci, Dept Biomat, Sahlgrenska Acad, Gothenburg,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SWEDEN&amp;searchby=N">Sweden.</a><br>BIOMATCELL VINN Excellence Ctr Biomat &amp; Cell Ther, Gothenburg,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SWEDEN&amp;searchby=N">Sweden.</a><br>IKERBASQUE Res Fdn, Metabol Unit, CIC BioGUNE, Derio, Bizkaia,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SPAIN&amp;searchby=N">Spain.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20OXFORD&amp;searchby=N"> Univ Oxford,</a> John Radcliffe Hosp, Nuffield Dept Obstet &amp; Gynaecol, Oxford,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=ENGLAND&amp;searchby=N">England.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20DUISBURG%20ESSEN&amp;searchby=N"> Univ Duisburg Essen,</a> Univ Hosp Essen, Inst Transfus Med, Essen,&nbsp; Germany.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=LA%20TROBE%20UNIV&amp;searchby=N"> La Trobe Univ,</a> La Trobe Inst Mol Sci LIMS, Melbourne, Vic,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRALIA&amp;searchby=N">Australia.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=GERMAN%20CANC%20RES%20CTR&amp;searchby=N"> German Canc Res Ctr,</a> Div Signaling &amp; Funct Genom, Heidelberg,&nbsp; Germany.<br>Jai Prakash Univ, Chapra, Bihar,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=INDIA&amp;searchby=N">India.</a><br>Ghent Univ Hosp, Dept Radiat Oncol &amp; Expt Canc Res, Lab Expt Canc Res, Ghent,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=BELGIUM&amp;searchby=N">Belgium.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20QUEENSLAND&amp;searchby=N"> Univ Queensland,</a> Translat Res Inst, Diamantina Inst, Brisbane, Qld,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRALIA&amp;searchby=N">Australia.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20UTRECHT&amp;searchby=N"> Univ Utrecht,</a> Fac Vet Med, Dept Biochem &amp; Cell Biol, Utrecht,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=NETHERLANDS&amp;searchby=N">Netherlands.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=SEOUL%20NATL%20UNIV&amp;searchby=N"> Seoul Natl Univ,</a> Coll Med, Dept Nucl Med, Seoul,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SOUTH%20KOREA&amp;searchby=N">South Korea.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=LONDON%20METROPOLITAN%20UNIV&amp;searchby=N"> London Metropolitan Univ,</a> Fac Life Sci &amp; Comp, Cellular &amp; Mol Immunol Res Ctr, London,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=ENGLAND&amp;searchby=N">England.</a><br>CSIR, Ctr Cellular &amp; Mol Biol, Hyderabad, Andhra Pradesh,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=INDIA&amp;searchby=N">India.</a><br>Mayo Clin, Dept Physiol &amp; Biomed Engn, Rochester,&nbsp; MN USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=DANKOOK%20UNIV&amp;searchby=N"> Dankook Univ,</a> Coll Med, Dept Internal Med, Cheonan,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SOUTH%20KOREA&amp;searchby=N">South Korea.</a><br>Aalborg Univ Hosp, Dept Clin Immunol, Aalborg,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=DENMARK&amp;searchby=N">Denmark.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=KYUNG%20HEE%20UNIV&amp;searchby=N"> Kyung Hee Univ,</a> Dept Appl Chem, Yongin,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SOUTH%20KOREA&amp;searchby=N">South Korea.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=EWHA%20WOMANS%20UNIV&amp;searchby=N"> Ewha Womans Univ,</a> Med Ctr, Seoul,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SOUTH%20KOREA&amp;searchby=N">South Korea.</a><br>Ontario Canc Inst, Toronto, ON M4X 1K9,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=CANADA&amp;searchby=N">Canada.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20GOTHENBURG&amp;searchby=N"> Univ Gothenburg,</a> Sahlgrenska Acad, Krefting Res Ctr, Gothenburg,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SWEDEN&amp;searchby=N">Sweden.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=SEOUL%20NATL%20UNIV%20HOSP&amp;searchby=N"> Seoul Natl Univ Hosp,</a> Biomed Res Inst, Seoul 110744,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SOUTH%20KOREA&amp;searchby=N">South Korea.</a><br>Erasmus Univ, Med Ctr, Dept Internal Med, Rotterdam,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=NETHERLANDS&amp;searchby=N">Netherlands.</a><br>Paracelsus Med Univ, Univ Hosp Salzburg, Dept Blood Grp Serol &amp; Transfus Med, Salzburg,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRIA&amp;searchby=N">Austria.</a><br>Paracelsus Med Univ, Spinal Cord Injury &amp; Tissue Regenerat Ctr Salzbur, Salzburg,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRIA&amp;searchby=N">Austria.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20PENN&amp;searchby=N"> Univ Penn,</a> Dept Dermatol, Perelman Sch Med, Philadelphia,&nbsp; PA 19104 USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=TEMPLE%20UNIV&amp;searchby=N"> Temple Univ,</a> Sch Med, Dept Med, Philadelphia,&nbsp; PA 19122 USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20VALENCIA&amp;searchby=N"> Univ Valencia,</a> Dept Biol Celular &amp; Parasitol, Area Parasitol, Valencia,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SPAIN&amp;searchby=N">Spain.</a><br>QIMR Berghofer Med Res Inst, Tumour Microenvironm Lab, Herston, Qld,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRALIA&amp;searchby=N">Australia.</a><br>Catholic Univ Louvain, Hematol Lab, Namur Thrombosis &amp; Hemostasis Ctr, NARILIS,CHU Dinant Godinne UCL Namur, Louvain,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=BELGIUM&amp;searchby=N">Belgium.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20NAMUR&amp;searchby=N"> Univ Namur,</a> Dept Pharm, NARILIS, Namur Thrombosis &amp; Hemostasis Ctr, Naumr,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=BELGIUM&amp;searchby=N">Belgium.</a><br>Med Ctr Univ Freiburg, Inst Environm Hlth Sci, Freiburg,&nbsp; Germany.<br>Med Ctr Univ Freiburg, Hosp Infect Control, Freiburg,&nbsp; Germany.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20AMSTERDAM&amp;searchby=N"> Univ Amsterdam,</a> Acad Med Ctr, Dept Clin Chem, NL-1105 AZ Amsterdam,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=NETHERLANDS&amp;searchby=N">Netherlands.</a><br>AC Camargo Canc Ctr, Lab Med Genom, Sao Paulo,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=BRAZIL&amp;searchby=N">Brazil.</a><br>Walter &amp; Eliza Hall Inst Med Res, Inflammat Div, Parkville, Vic,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRALIA&amp;searchby=N">Australia.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20MELBOURNE&amp;searchby=N"> Univ Melbourne,</a> Dept Paediat, Parkville, Vic 3052,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRALIA&amp;searchby=N">Australia.</a><br>Pohang Univ Sci &amp; Technol, Dept Mech Engn, Pohang,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SOUTH%20KOREA&amp;searchby=N">South Korea.</a><br>Mayo Clin, Dept Transplantat &amp; Canc Biol, Jacksonville,&nbsp; FL 32224 USA.<br>Natl Res Council Italy, Mass Spectrometry &amp; Prote, Inst Biosci &amp; Bior, Naples,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=ITALY&amp;searchby=N">Italy.</a><br>Barcelona Ctr Int Hlth Res, ICREA, Barcelona,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SPAIN&amp;searchby=N">Spain.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20MELBOURNE&amp;searchby=N"> Univ Melbourne,</a> Florey Inst Neurosci &amp; Mental Hlth, Melbourne, Vic,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRALIA&amp;searchby=N">Australia.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=FUNDACAO%20OSWALDO%20CRUZ&amp;searchby=N"> Fundacao Oswaldo Cruz,</a> Lab Mol Biol Parasites &amp; Vectors, Rio De Janeiro,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=BRAZIL&amp;searchby=N">Brazil.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20FED%20RIO%20DE%20JANEIRO&amp;searchby=N"> Univ Fed Rio de Janeiro,</a> Paulo Goes Microbiol Inst, Rio De Janeiro,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=BRAZIL&amp;searchby=N">Brazil.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=FUNDACAO%20OSWALDO%20CRUZ&amp;searchby=N"> Fundacao Oswaldo Cruz,</a> Ctr Technol Dev Hlth CDTS, Rio De Janeiro,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=BRAZIL&amp;searchby=N">Brazil.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=ICAHN%20SCH%20MED%20MT%20SINAI&amp;searchby=N"> Icahn Sch Med Mt Sinai,</a> Cardiovasc Res Inst, New York,&nbsp; NY 10029 USA.<br>Univ Med Ctr Utrecht, Dept Clin Chem &amp; Hematol, Utrecht,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=NETHERLANDS&amp;searchby=N">Netherlands.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20CALIF%20LOS%20ANGELES&amp;searchby=N"> Univ Calif Los Angeles,</a> Calif NanoSyst Inst, Los Angeles,&nbsp; CA USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20HELSINKI&amp;searchby=N"> Univ Helsinki,</a> Dept Biosci, Div Biochem &amp; Biotechnol, Helsinki,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=FINLAND&amp;searchby=N">Finland.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=QUEENSLAND%20UNIV%20TECHNOL&amp;searchby=N"> Queensland Univ Technol,</a> Inst Hlth &amp; Biomed Innovat, Australian Prostate Canc Res Ctr Queensland, Brisbane, Qld 4001,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRALIA&amp;searchby=N">Australia.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=WASHINGTON%20UNIV&amp;searchby=N"> Washington Univ,</a> Sch Med, Dept Cell Biol &amp; Physiol, St Louis,&nbsp; MO 63110 USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=AALBORG%20UNIV&amp;searchby=N"> Aalborg Univ,</a> Dept Hlth Sci &amp; Technol, Aalborg,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=DENMARK&amp;searchby=N">Denmark.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=JAGIELLONIAN%20UNIV&amp;searchby=N"> Jagiellonian Univ,</a> Dept Med Phys, Krakow,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=POLAND&amp;searchby=N">Poland.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=HIROSHIMA%20UNIV&amp;searchby=N"> Hiroshima Univ,</a> Grad Sch Biomed Sci, Dept Cellular &amp; Mol Biol, Hiroshima,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=JAPAN&amp;searchby=N">Japan.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=HANNOVER%20MED%20SCH&amp;searchby=N"> Hannover Med Sch,</a> Dept Hematol Hemostasis Oncol &amp; Stem Cell Transpl, Hannover,&nbsp; Germany.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20GOTHENBURG&amp;searchby=N"> Univ Gothenburg,</a> Sahlgrenska Acad, Dept Rheumatol &amp; Inflammat Res, Gothenburg,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SWEDEN&amp;searchby=N">Sweden.</a><br>Austin Hosp, Ludwig Inst Canc Res Melbourne, Heidelberg, Vic 3084,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=AUSTRALIA&amp;searchby=N">Australia.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UMEA%20UNIV&amp;searchby=N"> Umea Univ,</a> Dept Mol Biol, Umea,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SWEDEN&amp;searchby=N">Sweden.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=JOHNS%20HOPKINS%20UNIV&amp;searchby=N"> Johns Hopkins Univ,</a> Sch Med, Dept Mol &amp; Comparat Pathobiol, Baltimore,&nbsp; MD USA.<br>Inst Invest Sanitaria Princesa, Hosp Santa Cristina, Unidad Invest, Madrid,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SPAIN&amp;searchby=N">Spain.</a><br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20MUNICH&amp;searchby=N"> Univ Munich,</a> Dept Otorhinolaryngol, Helmholtz Zentrum Munchen, Munich,&nbsp; Germany.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=UNIV%20MUNICH&amp;searchby=N"> Univ Munich,</a> Res Grp Gene Vectors, Helmholtz Zentrum Munchen, Munich,&nbsp; Germany.<br></td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Field:</b></td><td width="80%">
+       <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=H&amp;search=COMPUTER%20SCIENCE&amp;searchby=F&amp;hothigh=H&amp;article_id=000352268900018">
+	COMPUTER SCIENCE&nbsp;</a><br>
+
+    <br></td></tr>
+    </tbody></table>
+  	<table width="100%" bgcolor="#FFFFFF" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr><td>7
+           <b>&nbsp;&nbsp;&nbsp;Citations: </b>8	<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000359772700010&amp;from=paperpage&amp;hothigh=H&amp;name=(WEB)%20&amp;option=E&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;sortby=1&amp;currpage=1&amp;graph_type=yearly">
+                <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+graphs.gif" border="0" alt="View Graphs" title="View Graphs"></a>
+   	        </td> <td align="right">
+           <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000359772700010&amp;option=E&amp;from=paperpage&amp;hoticon=Y&amp;hothigh=H&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;graph_type=bimonthly"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hot_paper.gif" border="0" alt="View the Hot Paper graph" title="View the Hot Paper graph"></a> <a href="https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?&amp;GWVersion=2&amp;SrcAuth=ESI&amp;SrcApp=ESI&amp;DestLinkType=FullRecord&amp;DestApp=WOS&amp;SrcAppSID=P1XMQ91iKwwEiwWyhjO&amp;SrcDesc=RETURN_ALT_TEXT&amp;SrcURL=http%3A//esi.webofknowledge.com/paperpage.cgi%3Foption%3DE%26searchby%3DN%26hothigh%3DH%26searchtitle%3Dweb%26searchscientist%3D%26searchinst%3D%26searchcountry%3D%26searchjournal%3D%26x%3D39%26y%3D6&amp;KeyUT=000359772700010&amp;SrcImageURL=">
+          <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+gotowos.gif" border="0" alt="View Full Record in Web of Science" title="View Full Record in Web of Science"></a>
+    </td></tr>
+   </tbody></table>
+   <table width="100%" bgcolor="#FFFFFF" cellspacing="0">
+   <tbody><tr><td width="20%" valign="top"><b>Title:</b></td><td width="80%">PSE-IN-ONE: A <strong>WEB</strong> SERVER FOR GENERATING VARIOUS MODES OF PSEUDO COMPONENTS OF DNA, RNA, AND PROTEIN SEQUENCES&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Authors:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=LIU%2C%20B&amp;searchby=N">LIU B; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=LIU%2C%20FL&amp;searchby=N">LIU FL; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=WANG%2C%20XL&amp;searchby=N">WANG XL; </a> &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=CHEN%2C%20JJ&amp;searchby=N">CHEN JJ; </a> &nbsp;FANG LY; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=CHOU%2C%20KC&amp;searchby=N">CHOU KC </a> &nbsp;&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Source:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=J&amp;search=NUCL%20ACID%20RES&amp;searchby=N">NUCL ACID RES</a> 43 (W1): W65-W71 JUL 1 2015&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Addresses:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=HARBIN%20INST%20TECHNOL&amp;searchby=N"> Harbin Inst Technol,</a> Shenzhen Grad Sch, Sch Comp Sci &amp; Technol, Shenzhen 518055, Guangdong,&nbsp; Peoples R China.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=HARBIN%20INST%20TECHNOL&amp;searchby=N"> Harbin Inst Technol,</a> Shenzhen Grad Sch, Key Lab Network Oriented Intelligent Computat, Shenzhen 518055, Guangdong,&nbsp; Peoples R China.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=GORDON%20LIFE%20SCI%20INST&amp;searchby=N"> Gordon Life Sci Inst,</a> Belmont,&nbsp; MA 02478 USA.<br><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=I&amp;search=KING%20ABDULAZIZ%20UNIV&amp;searchby=N"> King Abdulaziz Univ,</a> Ctr Excellence Genom Med Res CEGMR, Jeddah 21589,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=SAUDI%20ARABIA&amp;searchby=N">Saudi Arabia.</a><br></td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Field:</b></td><td width="80%">
+       <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=H&amp;search=BIOLOGY%201111AND1111%20BIOCHEMISTRY&amp;searchby=F&amp;hothigh=H&amp;article_id=000359772700010">
+	BIOLOGY &amp; BIOCHEMISTRY&nbsp;</a><br>
+
+    <br></td></tr>
+    </tbody></table>
+  	<table width="100%" bgcolor="#FFFFCC" cellspacing="0" cellpadding="0" border="0">
+		<tbody><tr><td>8
+           <b>&nbsp;&nbsp;&nbsp;Citations: </b>5	<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000362141700012&amp;from=paperpage&amp;hothigh=H&amp;name=(WEB)%20&amp;option=E&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;sortby=1&amp;currpage=1&amp;graph_type=yearly">
+                <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+graphs.gif" border="0" alt="View Graphs" title="View Graphs"></a>
+   	        </td> <td align="right">
+           <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hotpapergraph.cgi?articleid=000362141700012&amp;option=E&amp;from=paperpage&amp;hoticon=Y&amp;hothigh=H&amp;searchby=N&amp;searchtitle=web&amp;searchscientist=&amp;searchinst=&amp;searchcountry=&amp;searchjournal=&amp;graph_type=bimonthly"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+hot_paper.gif" border="0" alt="View the Hot Paper graph" title="View the Hot Paper graph"></a> <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+researchfront.cgi?researchfrontid=10774&amp;option=R&amp;rficon=Y"><img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+research_front.gif" border="0" alt="View the Research Front" title="View the Research Front"></a> <a href="https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?&amp;GWVersion=2&amp;SrcAuth=ESI&amp;SrcApp=ESI&amp;DestLinkType=FullRecord&amp;DestApp=WOS&amp;SrcAppSID=P1XMQ91iKwwEiwWyhjO&amp;SrcDesc=RETURN_ALT_TEXT&amp;SrcURL=http%3A//esi.webofknowledge.com/paperpage.cgi%3Foption%3DE%26searchby%3DN%26hothigh%3DH%26searchtitle%3Dweb%26searchscientist%3D%26searchinst%3D%26searchcountry%3D%26searchjournal%3D%26x%3D39%26y%3D6&amp;KeyUT=000362141700012&amp;SrcImageURL=">
+          <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+gotowos.gif" border="0" alt="View Full Record in Web of Science" title="View Full Record in Web of Science"></a>
+    </td></tr>
+   </tbody></table>
+   <table width="100%" bgcolor="#FFFFCC" cellspacing="0">
+   <tbody><tr><td width="20%" valign="top"><b>Title:</b></td><td width="80%">QUESTIONING THE ROLE OF PHENOLOGY SHIFTS AND TROPHIC MISMATCHING IN A PLANKTONIC FOOD <strong>WEB</strong>&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Authors:</b></td><td width="80%">ATKINSON A; &nbsp;HARMER RA; &nbsp;WIDDICOMBE CE; &nbsp;MCEVOY AJ; &nbsp;SMYTH TJ; &nbsp;CUMMINGS DG; &nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=A&amp;search=SOMERFIELD%2C%20PJ&amp;searchby=N">SOMERFIELD PJ; </a> &nbsp;MAUD JL; &nbsp;MCCONVILLE K &nbsp;&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Source:</b></td><td width="80%"><a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=J&amp;search=PROG%20OCEANOGR&amp;searchby=N">PROG OCEANOGR</a> 137: 498-512 PART B SP. ISS. SI SEP 2015&nbsp;</td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Addresses:</b></td><td width="80%">Plymouth Marine Lab, Plymouth PL1 3DH, Devon,&nbsp;<a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+rankdatapage.cgi?option=C&amp;search=ENGLAND&amp;searchby=N">England.</a><br></td></tr>
+   <tr><td colspan="2">&nbsp;</td></tr>
+   <tr><td width="20%" valign="top"><b>Field:</b></td><td width="80%">
+       <a href="https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=H&amp;search=GEOSCIENCES&amp;searchby=F&amp;hothigh=H&amp;article_id=000362141700012">
+	GEOSCIENCES&nbsp;</a><br>
+
+    <br></td></tr>
+    </tbody></table>
+  				 </td></tr><tr> <td nowrap="">
+                     <table width="100%" border="0" cellpadding="2" cellspacing="0">
+	             <tbody><tr valign="center">
+	             <td>&nbsp;1 - 8 (of 8) </td>
+	             <td>
+	             <center>
+	             <table border="0" cellspacing="0" cellpadding="0" align="center">
+	             <tbody><tr align="middle" valign="center">
+	            <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+first10i.gif" width="19" height="24" alt="First Page (Inactive)" title="First Page (Inactive)" align="bottom" border="0" vspace="1" hspace="1">
+     	                 </td> <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+back10i.gif" alt="Back 10 Pages (Inactive)" title="Back 10 Pages (Inactive)" align="bottom" border="0" vspace="1" hspace="1"></td> <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+prevpgi.gif" alt="Previous Page (Inactive)" title="Previous Page (Inactive)" align="bottom" border="0" vspace="1" hspace="1">
+			</td> <td> [ </td> <td> <i>1</i>   ] </td>  <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+nextpgi.gif" alt="Next Page (Inactive)" title="Next Page (Inactive)" align="bottom" border="0" vspace="1" hspace="1"></td> <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+frwrd10i.gif" alt="Forward 10 Pages (Inactive)" title="Forward 10 Pages (Inactive)" align="bottom" border="0" vspace="1" hspace="1"> </td> <td> <img src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+last10i.gif" alt="Last Page (Inactive)" title="Last Page (Inactive)" align="bottom" border="0" vspace="1" hspace="1"></td> </tr> </tbody></table> </center> </td> <td align="right">
+		      Page 1 of 1
+		      &nbsp;</td> </tr> </tbody></table> </td> </tr>
+
+ 	    	</tbody></table>
+
+
+
+	    &nbsp;
+  <hr>
+        <center>
+   	<i>Copyright 2016
+ 		<a href="https://vpn.nuist.edu.cn/scientific/,DanaInfo=.awxyCxmut0xxKo10+scientific.jsp">
+  	        The Thomson Corporation
+		</a>
+   	</i>
+        <div style="background-image: url(../images/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+thomson_bk.gif); background-repeat: repeat-x;"><img id="btslogo" alt="The Thomson Corporation" title="The Thomson Corporation" src="./Essential Science Indicators Version 2.3_files/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+tslogo.gif" name="thomson" width="100%" height="55" border="0"></div>
+
+
+	</center>
+
+
+<script language="javascript" id="dstb-id">dstb()</script></body></html>
+
+"""
