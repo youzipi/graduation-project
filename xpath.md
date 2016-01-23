@@ -5,3 +5,8 @@ nodename	选取此节点的所有子节点。
 .	选取当前节点。
 ..	选取当前节点的父节点。
 @	选取属性。
+
+
+# xpath
+section：
+/html/body/table[4]/tbody/tr[3]/td/table[2]
