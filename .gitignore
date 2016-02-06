@@ -2,3 +2,6 @@
 
 /notebook/.ipynb_checkpoints
 temp/
+
+# xshell
+*.xsh
