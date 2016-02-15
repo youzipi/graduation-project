@@ -1,6 +1,7 @@
+
 # coding: utf-8
 
-# In[1]:
+# In[32]:
 
 import requests
 # from bs4 import BeautifulSoup
@@ -10,7 +11,8 @@ import requests
 from scrapy.selector import Selector
 from lxml import html
 
-# In[8]:
+
+# In[38]:
 
 headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -27,7 +29,8 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.111 Safari/537.36',
 }
 
-# In[9]:
+
+# In[39]:
 
 data = {
     'tz_offset': '480',
@@ -37,61 +40,78 @@ data = {
     'btnSubmit': u'登陆',
 }
 
-# In[10]:
+
+# In[40]:
 
 s = requests.session()
 
-# In[11]:
+
+# In[41]:
 
 postreq = s.post('https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi', headers=headers, data=data)
 postreq.encoding = 'utf8'
+
 
 # In[6]:
 
 # print postreq.text
 
 
-# In[12]:
+# In[42]:
 
 postreq.cookies.get_dict()
 
-# In[13]:
+
+# In[43]:
 
 postreq.status_code
 
-# In[15]:
 
-# req = s.post('https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+home.cgi',cookies=postreq.cookies)
-# https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=E&searchby=N&hothigh=H&searchtitle=web&searchscientist=&searchinst=&searchcountry=&searchjournal=&x=39&y=6
+# In[44]:
+
+#req = s.post('https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+home.cgi',cookies=postreq.cookies)
+#https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=E&searchby=N&hothigh=H&searchtitle=web&searchscientist=&searchinst=&searchcountry=&searchjournal=&x=39&y=6
 search_url = """https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search=COMPUTER+SCIENCE&hothigh=G&option=G&x=19&y=2
 """
 req = s.get(search_url)
 
-# In[16]:
+
+# In[45]:
 
 content = req.text
 print content
 
-# In[104]:
+
+# In[106]:
 
 c = Selector(text=content)
 
 tables = c.xpath('/html/body/table').extract()
 print len(tables)
+#print tables
 # sections = c.xpath('/html/body/table[4]') #？？
 # sections = c.xpath('/html/body/table[4]/tr[3]/td/table')
 # sections = c.xpath('/html/body/table[4]/tr[3]/td/table')
 # target_url = c.xpath('/html/body/table[4]/tr[3]/td/table[2]/tbody/tr/td[2]/a')
-target_url = c.xpath('/html/body/table[4]/tr[3]/td/table/table[3]/tr/td[2]/a/@href')
+target_url = c.xpath('/html/body/table[4]/tr[3]/td/table/table[34]/tr/td[2]/a/@href')
 # print sections.extract()
 # print len(sections)
 print len(target_url)
 
-# In[105]:
+
+# In[123]:
+
+urls = c.xpath('//td[2]/a/img[contains(@src, "gotowos.gif")]/../@href')
+urls.extract()
+len(urls)
+
+
+# In[92]:
 
 target_url.extract()
 
-# In[23]:
+
+# In[48]:
 
 trs = sections[2].xpath('./tbody/tr')
 
@@ -106,3 +126,4 @@ for p in trs:
         continue
     print pair[0].extract()
     print pair[1].extract()
+
