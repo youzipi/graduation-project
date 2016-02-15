@@ -4,7 +4,6 @@ import scrapy
 from scrapy.selector import Selector
 
 from config import headers, login_form_data
-from esi.esi.items import EsiItem
 
 
 class EsiSpider(scrapy.Spider):
@@ -42,5 +41,4 @@ class EsiSpider(scrapy.Spider):
         urls = c.xpath('//td[2]/a/img[contains(@src, "gotowos.gif")]/../@href')
         print urls.extract()
         # len(urls) # 20= 一页的记录数
-        item = EsiItem()
-        yield item
+        # item = EsiItem()

@@ -74,3 +74,7 @@ CFLAGS="-O0"  pip install lxml
 pip install Scrapy==0.16.0
 scrapy --version
 ```
+
+
+刚装时 没有仔细看 装的32位的python 写的过程中 又装了64的pywin32
+http://bbs.csdn.net/topics/391076517

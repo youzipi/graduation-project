@@ -27,4 +27,3 @@ class EsiItem(scrapy.Item):
     cited_times = scrapy.Field()
     cited_references = scrapy.Field()
 
-    pass
