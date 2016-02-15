@@ -10,6 +10,32 @@ option=E
 &x=27
 &y=10
 
+
+https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi
+?option=G
+&searchby=F
+&search=COMPUTER+SCIENCE
+&hothigh=G
+&option=G
+&x=9
+&y=10
+&currpage=2
+
+https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?
+&GWVersion=2
+&SrcAuth=ESI
+&SrcApp=ESI
+&DestLinkType=FullRecord
+&DestApp=WOS
+&SrcAppSID=R2JXFFLY14ojtaGxywF
+&SrcDesc=RETURN_ALT_TEXT
+&SrcURL=http%3A//esi.webofknowledge.com/paperpage.cgi%3Foption%3DG%26option%3DG%26searchby%3DF%26search%3DCOMPUTER%2520SCIENCE%26hothigh%3DG%26x%3D9%26y%3D10%26currpage%3D1
+&KeyUT=000251197700021  
+**Accession Number(入藏号): WOS:000251197700021 唯一编号**
+&SrcImageURL=
+
+
+
 ```
 cookies = {
     "DSFirstAccess": "1453365010",
