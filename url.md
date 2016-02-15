@@ -60,3 +60,16 @@ realm:本专科生
 btnSubmit:登陆
 
 tz_offset=480&username=20121344018&password=250036&realm=%E6%9C%AC%E4%B8%93%E7%A7%91%E7%94%9F&btnSubmit=%E7%99%BB%E9%99%86
+
+
+#  ESI 跳转 wos
+三次重定向
+
+![三次重定向](./imgs/redirect.png)
+
+C:\Windows\ProgramData\Oracle\Java\javapath;D:\Java\jdk1.7.0_80\jre\bin;D:\Java\jdk1.7.0_80\bin;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;D:\TortoiseGit\bin;D:\nodejs\;D:\Anaconda2;D:\Anaconda2\Scripts;D:\Anaconda2\Library\bin
+
+C:\Windows\ProgramData\Oracle\Java\javapath;D:\Java\jdk1.7.0_80\jre\bin;D:\Java\jdk1.7.0_80\bin;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;D:\TortoiseGit\bin;D:\nodejs\;D:\Python27;D:\Python27\Scripts;D:\Python27\Library\bin
+
+Python27
+

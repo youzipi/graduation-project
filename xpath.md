@@ -7,6 +7,16 @@ nodename	选取此节点的所有子节点。
 @	选取属性。
 
 
+
+
+> 
 # xpath
 section：
 /html/body/table[4]/tbody/tr[3]/td/table[2]
+
+## xpath img src  
+http://stackoverflow.com/questions/5738972/how-to-find-an-image-tag-by-filename-using-xpath
+
+```python
+//img[contains(@src, 'my_image.png')]
+```
