@@ -25,21 +25,11 @@ headers = {
 login_form_data = {
     'tz_offset': '480',
     'username': '20121344018',
+    # 'username': '20121344014',
     'password': '250036',
+    # 'password': '293035',
     'realm': u'本专科生',
     'btnSubmit': u'登陆',
 }
 
-s = requests.session()
 
-postreq = s.post('https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi', headers=headers, data=login_form_data)
-postreq.encoding = 'utf8'
-
-# req = s.post('https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+home.cgi',cookies=postreq.cookies)
-# https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=E&searchby=N&hothigh=H&searchtitle=web&searchscientist=&searchinst=&searchcountry=&searchjournal=&x=39&y=6
-search_url = """https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search=COMPUTER+SCIENCE&hothigh=G&option=G&x=19&y=2
-"""
-req = s.get(search_url)
-
-content = req.text
-# print content
