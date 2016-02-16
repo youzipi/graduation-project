@@ -4,3 +4,6 @@
 folder.ini
 /notebook/aliyun.xsh
 temp/
+
+*.pyc
+*.xsh
