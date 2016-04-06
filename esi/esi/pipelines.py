@@ -8,6 +8,7 @@ import logging
 from items import EsiItem
 from scrapy.conf import settings
 import pymongo
+
 logger = logging.getLogger("pipiline")
 
 
@@ -23,7 +24,8 @@ class EsiPipeline(object):
         self.post = db[doc_name]
 
     def process_item(self, item, spider):
-        logger.debug(("item", item))
+        # logger.debug(("item=", item))
         esi_info = dict(item)
-        self.post.insert(esi_info)
+        # self.post.insert(esi_info)
+        self.post.update_one({'wos_no': esi_info['wos_no']}, {"$set": esi_info}, upsert=True)
         return item
