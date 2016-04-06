@@ -13,3 +13,7 @@ https://trello.com/c/kSkYGOFf/15--
 
 
 轮询，线程池 不做了，就用scrapy的
+
+
+查看网站的 robots.txt
+http://www.douban.com/robots.txt
