@@ -4,8 +4,11 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
+import logging
+
+logger = logging.getLogger("pipiline")
 
 
 class EsiPipeline(object):
     def process_item(self, item, spider):
-        return item
+        logger.debug(("item", item))

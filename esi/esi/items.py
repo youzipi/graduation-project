@@ -11,7 +11,9 @@ import scrapy
 class EsiItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    url = scrapy.Field()
+    wos_link = scrapy.Field()
+
+    wos_no = scrapy.Field()
 
     title = scrapy.Field()
     author = scrapy.Field()
@@ -26,4 +28,3 @@ class EsiItem(scrapy.Item):
     # citation network
     cited_times = scrapy.Field()
     cited_references = scrapy.Field()
-

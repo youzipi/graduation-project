@@ -1,18 +1,33 @@
 # coding=utf-8
+import logging
+
+import re
 import requests
 import scrapy
 from scrapy.selector import Selector
 from scrapy import Request, FormRequest
+from scrapy.spiders import CrawlSpider, Rule
+from scrapy.linkextractors import LinkExtractor
 
 from config import headers, login_form_data
+from ..items import EsiItem
+
+logger = logging.getLogger()
 
 
-class EsiSpider(scrapy.Spider):
+class EsiSpider(CrawlSpider):
     name = "esi"
 
     # allowed_domains = [""]
     # start_urls = ['https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi']
-    start_urls = ['https://www.baidu.com/']
+    start_urls = [
+        'https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&option=G&searchby=F&search=COMPUTER%20SCIENCE&hothigh=G&x=1&y=7&currpage=1'
+    ]
+
+    def __init__(self, *a, **kw):
+        super(EsiSpider, self).__init__(*a, **kw)
+        self.currpage = 1
+        self.search_url = """https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search=COMPUTER%20SCIENCE&hothigh=G&option=G&x=19&y=2&currpage={currpage}"""
 
     # def start_requests(self):
     # s = requests.session()
@@ -35,6 +50,26 @@ class EsiSpider(scrapy.Spider):
     # return [s.get(search_url)]
     # return [scrapy.FormRequest]
 
+    rules = (
+        Rule(LinkExtractor(allow=("/*",)), callback='parse'),
+        # Rule(LinkExtractor(allow=("/people/[^/]+/?$", )),  callback='parse_user'),
+        # Rule(LinkExtractor(allow=("/people/$", )),  callback='parse_user')
+    )
+
+    def start_requests(self):
+        return [
+            FormRequest(
+                    "https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi",
+                    formdata=login_form_data,
+                    callback=self.after_login
+            )
+        ]
+
+    def after_login(self, response):
+        # for url in self.start_urls:
+        # yield self.make_requests_from_url(url)
+        yield self.make_requests_from_url(self.start_urls[0])
+
     def parse(self, response):
         """
         <a href="https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?&amp;GWVersion=2&amp;SrcAuth=ESI&amp;SrcApp=ESI&amp;DestLinkType=FullRecord&amp;DestApp=WOS&amp;SrcAppSID=T24LUnOT9HuPw5EtTxm&amp;SrcDesc=RETURN_ALT_TEXT&amp;SrcURL=http%3A//esi.webofknowledge.com/paperpage.cgi%3Foption%3DG%26option%3DG%26searchby%3DF%26search%3DCOMPUTER%2520SCIENCE%26hothigh%3DG%26x%3D19%26y%3D2&amp;KeyUT=000226308500016&amp;SrcImageURL=">
@@ -42,30 +77,84 @@ class EsiSpider(scrapy.Spider):
         </a>
         :param response:
         """
-        s = requests.session()
 
-        login_resp = s.post('https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi',
-                            headers=headers,
-                            data=login_form_data)
-        login_resp.encoding = 'utf8'
-        print login_resp.cookies.get_dict()
+        # logger.debug(response.cookie)
+        # s = requests.session()
 
-        # search_url = """https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search=COMPUTER+SCIENCE&hothigh=G&option=G&x=19&y=2
-        # """
+        # login_resp = s.post('https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi',
+        #                     headers=headers,
+        #                     data=login_form_data)
+        # login_resp.encoding = 'utf8'
+        # logger.debug("cookie=", login_resp.cookies.get_dict())
+        # print "cookie=", login_resp.cookies.get_dict()
+        """
+        https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search=COMPUTER+SCIENCE&hothigh=G&option=G&x=8&y=5
+        """
+        # print response
+        # for i in xrange(1):
+        #     search_url = """
+        #     https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search=COMPUTER+SCIENCE&hothigh=G&option=G&x=8&y=5"""
+        #
+        #     rq_resp = s.get(search_url)
+        #
+        #     content = rq_resp.text
+        content = response.body
+        c = Selector(text=content)
+        #
+        #     # /html/body/table[4]/tbody/tr[3]/td/table[2]/tbody/tr/td[2]/a/img
+        # target_url = c.xpath('/html/body/table[4]/tr[3]/td/table/table[3]/tr/td[2]/a/@href')
 
-        for i in xrange(10):
-            search_url = """https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search={search}&hothigh=G&option=G&x=19&y=2&currpage={currpage}""".format(
-                search='COMPUTER+SCIENCE', currpage=1)
+        # target_urls = c.xpath('/html/body/table[4]/tr[3]/td/table/table[position() mod 2 = 1]/tr/td[2]/a/@href')
+        # target_urls_extract = target_urls.extract()
+        # wos_links = [u for u in target_urls_extract if "KeyUT" in u]
 
-            rq_resp = s.get(search_url)
+        # target_url = c.xpath('/html/body/table[4]/tr[3]/td/table/table[3]/tr/td[2]/a/@href')
+        # target_urls = c.xpath('//td[2]/a/img[contains(@src, "gotowos.gif")]/../@href') chrome
+        target_urls = c.xpath('//td/a/img[contains(@src, "gotowos.gif")]/../@href')
 
-            content = rq_resp.text
-            c = Selector(text=content)
+        ## chrome
+        # /html/body/table[4]/tbody/tr[3]/td/table[2]/tbody/tr/td[2]/a
+        # /html/body/table[4]/tbody/tr[3]/td/table[4]/tbody/tr/td[2]/a
+        # /html/body/table[4]/tbody/tr[3]/td/table[6]/tbody/tr/td[2]/a
 
-            # /html/body/table[4]/tbody/tr[3]/td/table[2]/tbody/tr/td[2]/a/img
-            target_url = c.xpath('/html/body/table[4]/tr[3]/td/table/table[3]/tr/td[2]/a/@href')
-            print target_url.extract()
-            urls = c.xpath('//td[2]/a/img[contains(@src, "gotowos.gif")]/../@href')
-            print urls.extract()
-        rq_resp.connection.close()
-        s.close()
+        wos_links = target_urls.extract()
+
+        logger.debug(("wos_links=", wos_links))
+        logger.debug(("wos_links.__len__()=", wos_links.__len__()))
+
+        if wos_links.__len__() > 0:
+            # if target_url.size > 0:
+            wos_link = wos_links[0]
+            wos_no = re.search("KeyUT=([\d]*)&", wos_link).group(1)
+            logger.debug(("access_no=", wos_no))
+
+            item = EsiItem()
+            item['wos_link'] = wos_link
+            item['wos_no'] = wos_no
+
+            yield item
+        # elif wos_links.__len__() == 0:
+        if self.currpage >= 10:
+
+            # todo get logout
+            yield Request("https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi", callback=self.after_logout)
+            return
+
+        try:
+            self.currpage += 1
+
+            next_url = self.search_url.format(currpage=self.currpage)
+            logger.debug(('next_page', self.currpage))
+            # logger.debug(('next_url', next_url))
+            yield Request(next_url, callback=self.parse)
+        except ValueError:
+            logger.debug(('extra_url', response.url))
+
+            # logout_resp = s.get('https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi', headers=headers)
+            # print logout_resp.status
+            # print logger.debug(msg=("logout_resp.status=", logout_resp.status))
+
+            # s.close()
+
+    def after_logout(self, response):
+        logger.debug("=====log out=====")
