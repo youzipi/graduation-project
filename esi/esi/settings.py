@@ -14,6 +14,12 @@ BOT_NAME = 'esi'
 SPIDER_MODULES = ['esi.spiders']
 NEWSPIDER_MODULE = 'esi.spiders'
 
+# MongoDB config
+MONGO_HOST = '127.0.0.1'
+MONGO_PORT = 27017
+MONGO_DBNAME = 'esi'
+MONGO_DOCNAME = 'test'
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'esi (+http://www.yourdomain.com)'
@@ -61,9 +67,9 @@ NEWSPIDER_MODULE = 'esi.spiders'
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'esi.pipelines.SomePipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'esi.pipelines.EsiPipeline':300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
