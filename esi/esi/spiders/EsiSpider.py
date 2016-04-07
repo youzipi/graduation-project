@@ -18,11 +18,6 @@ from ..items import EsiItem
 logger = logging.getLogger('esi-spider')
 
 
-def logout():
-    logger.debug("logout():=====logout=====")
-    Request("https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi")
-    logger.debug("logout():=====logout=====")
-
 
 
 class EsiSpider(CrawlSpider, LogoutMixin):
@@ -39,8 +34,6 @@ class EsiSpider(CrawlSpider, LogoutMixin):
 
     rules = (
         Rule(LinkExtractor(allow=("/*",)), callback='parse'),
-        # Rule(LinkExtractor(allow=("/people/[^/]+/?$", )),  callback='parse_user'),
-        # Rule(LinkExtractor(allow=("/people/$", )),  callback='parse_user')
     )
 
     def __init__(self, *a, **kw):
@@ -49,9 +42,6 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         self.currpage = 1
         self.search_url = """https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search=COMPUTER%20SCIENCE&hothigh=G&option=G&x=19&y=2&currpage={currpage}"""
 
-        # dispatcher.connect(self.logout, signals.spider_closed)
-        # dispatcher.connect(self.logout, signals.spider_idle)
-        # dispatcher.connect(logout, signals.spider_closed)
         dispatcher.connect(self._spider_opend, signals.spider_opened)
         #  todo spider_closed 好像是关闭后，才发送信号的，用于做一些善后处理，实质上是after_spider_closed 如果要对logout发起请求的话，cookie就不在了，没法正常退出
         # dispatcher.connect(self._spider_logout, signal=signals.spider_idle)
@@ -72,7 +62,6 @@ class EsiSpider(CrawlSpider, LogoutMixin):
     # """.format(search='COMPUTER+SCIENCE', currpage=1)
 
     # return [Request(url=search_url, headers=headers, cookies=sc_resp.cookies)]
-
 
     # return [s.get(search_url)]
     # return [scrapy.FormRequest]
@@ -102,7 +91,7 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         # yield self.make_requests_from_url(url)
         # yield self.make_requests_from_url(self.search_url.format(currpage=self.currpage))
 
-        logger.debug(("cookies",response.request.cookies)) # todo get cookie
+        # logger.debug(("cookies", response.request.cookies))  # todo get cookie
         for i in xrange(5):
             try:
                 next_url = self.search_url.format(currpage=self.currpage)
@@ -132,9 +121,7 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         # login_resp.encoding = 'utf8'
         # logger.debug("cookie=", login_resp.cookies.get_dict())
         # print "cookie=", login_resp.cookies.get_dict()
-        """
-        https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search=COMPUTER+SCIENCE&hothigh=G&option=G&x=8&y=5
-        """
+
         # print response
         # for i in xrange(1):
         #     search_url = """
@@ -152,36 +139,42 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         # target_urls = c.xpath('/html/body/table[4]/tr[3]/td/table/table[position() mod 2 = 1]/tr/td[2]/a/@href')
         # target_urls_extract = target_urls.extract()
         # wos_links = [u for u in target_urls_extract if "KeyUT" in u]
-
-        # target_url = c.xpath('/html/body/table[4]/tr[3]/td/table/table[3]/tr/td[2]/a/@href')
-        # target_urls = c.xpath('//td[2]/a/img[contains(@src, "gotowos.gif")]/../@href') chrome
-        target_urls = c.xpath('//td/a/img[contains(@src, "gotowos.gif")]/../@href')
-
-        ## chrome
+        # chrome
         # /html/body/table[4]/tbody/tr[3]/td/table[2]/tbody/tr/td[2]/a
         # /html/body/table[4]/tbody/tr[3]/td/table[4]/tbody/tr/td[2]/a
         # /html/body/table[4]/tbody/tr[3]/td/table[6]/tbody/tr/td[2]/a
+        # target_url = c.xpath('/html/body/table[4]/tr[3]/td/table/table[3]/tr/td[2]/a/@href')
+        # target_urls = c.xpath('//td[2]/a/img[contains(@src, "gotowos.gif")]/../@href') chrome
 
-        wos_links = target_urls.extract()
+        # td = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/..')
+        # citations_list  = td.xpath('./text()[2]')
+
+        wos_links = c.xpath('//td/a/img[contains(@src, "gotowos.gif")]/../@href').extract()
+        citations_list = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/../text()[2]').extract()
+        year_citations_list = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/../a/@href').extract()
+
+        length = len(wos_links)
 
         # logger.debug(("wos_links=", wos_links))
-        logger.debug(("wos_links.__len__()=", wos_links.__len__()))
+        logger.debug(("len(wos_links)=", length))
 
-        if wos_links.__len__() > 0:
+        if length > 0:
             # if target_url.size > 0:
-            for wos_link in wos_links:
-                wos_no = re.search("KeyUT=([\d]*)&", wos_link).group(1)
-                # logger.debug(("access_no=", wos_no))
+            for i in range(length):
+                wos_no = re.search("KeyUT=([\d]*)&", wos_links[i]).group(1)
+                citations = int(re.sub('[,|\t]', '', citations_list[i]))
+
+                year_citations = year_citations_list[i]
 
                 item = EsiItem()
-                item['wos_link'] = wos_link
+                item['wos_link'] = wos_links[i]
                 item['wos_no'] = wos_no
+                item['citations'] = citations
 
                 yield item
-        elif wos_links.__len__() == 0:
+        elif length == 0:
             pass
             # if self.currpage >= 10:
-            # todo get logout
             # yield Request("https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi", callback=self.after_logout)
             # return
 
@@ -194,17 +187,3 @@ class EsiSpider(CrawlSpider, LogoutMixin):
             #     yield Request(next_url, callback=self.parse)
             # except ValueError:
             #     logger.debug(('extra_url', response.url))
-
-            # logout_resp = s.get('https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi', headers=headers)
-            # print logout_resp.status
-            # print logger.debug(msg=("logout_resp.status=", logout_resp.status))
-
-            # s.close()
-
-            # def logout(self):
-            #     logger.debug('Closing down with logout [%s]' % (self.logout_url))
-            #     return super(EsiSpider, self).logout()
-            #
-            # def logout_verify(self, response):
-            #     if 'Logged out' in response.body:
-            #         logger.debug('Closing down with logout [%s]' % (self.logout_url))
