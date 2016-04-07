@@ -12,8 +12,9 @@ class EsiItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     wos_link = scrapy.Field()
-
     wos_no = scrapy.Field()
+
+    citations = scrapy.Field()
 
     title = scrapy.Field()
     author = scrapy.Field()
