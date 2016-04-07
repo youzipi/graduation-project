@@ -5,19 +5,28 @@ import re
 import requests
 import scrapy
 from scrapy.selector import Selector
-from scrapy import Request, FormRequest,signals
+from scrapy import Request, FormRequest, signals
 from scrapy.signalmanager import SignalManager
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
 from scrapy.xlib.pydispatch import dispatcher
 
 from config import headers, login_form_data
+from .mixin.logoutmixin import LogoutMixin
 from ..items import EsiItem
 
-logger = logging.getLogger()
+logger = logging.getLogger('esi-spider')
 
 
-class EsiSpider(CrawlSpider):
+def logout():
+    logger.debug("logout():=====logout=====")
+    Request("https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi")
+    logger.debug("logout():=====logout=====")
+
+
+
+class EsiSpider(CrawlSpider, LogoutMixin):
+# class EsiSpider(CrawlSpider):
     name = "esi"
 
     # allowed_domains = [""]
@@ -26,14 +35,26 @@ class EsiSpider(CrawlSpider):
         'https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&option=G&searchby=F&search=COMPUTER%20SCIENCE&hothigh=G&x=1&y=7&currpage=1'
     ]
 
+    logout_url = "https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi"
+
+    rules = (
+        Rule(LinkExtractor(allow=("/*",)), callback='parse'),
+        # Rule(LinkExtractor(allow=("/people/[^/]+/?$", )),  callback='parse_user'),
+        # Rule(LinkExtractor(allow=("/people/$", )),  callback='parse_user')
+    )
+
     def __init__(self, *a, **kw):
         super(EsiSpider, self).__init__(*a, **kw)
+        LogoutMixin.__init__(self, logger)
         self.currpage = 1
         self.search_url = """https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search=COMPUTER%20SCIENCE&hothigh=G&option=G&x=19&y=2&currpage={currpage}"""
 
-        dispatcher.connect(self.logout, signals.spider_closed)
-
-
+        # dispatcher.connect(self.logout, signals.spider_closed)
+        # dispatcher.connect(self.logout, signals.spider_idle)
+        # dispatcher.connect(logout, signals.spider_closed)
+        dispatcher.connect(self._spider_opend, signals.spider_opened)
+        #  todo spider_closed 好像是关闭后，才发送信号的，用于做一些善后处理，实质上是after_spider_closed 如果要对logout发起请求的话，cookie就不在了，没法正常退出
+        # dispatcher.connect(self._spider_logout, signal=signals.spider_idle)
 
     # def start_requests(self):
     # s = requests.session()
@@ -56,18 +77,23 @@ class EsiSpider(CrawlSpider):
     # return [s.get(search_url)]
     # return [scrapy.FormRequest]
 
-    rules = (
-        Rule(LinkExtractor(allow=("/*",)), callback='parse'),
-        # Rule(LinkExtractor(allow=("/people/[^/]+/?$", )),  callback='parse_user'),
-        # Rule(LinkExtractor(allow=("/people/$", )),  callback='parse_user')
-    )
+    def _spider_opend(self):
+        logger.debug("+++++++spider_opened++++")
+
+    def after_logout(self, response):
+        logger.debug("=====after_logout=====")
+
+    def logout(self):
+        logger.debug("=====logout=====")
+        return super(EsiSpider, self).logout()
+        # yield Request("https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi", callback=self.after_logout)
 
     def start_requests(self):
         return [
             FormRequest(
-                "https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi",
-                formdata=login_form_data,
-                callback=self.after_login
+                    "https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi",
+                    formdata=login_form_data,
+                    callback=self.after_login
             )
         ]
 
@@ -75,7 +101,9 @@ class EsiSpider(CrawlSpider):
         # for url in self.start_urls:
         # yield self.make_requests_from_url(url)
         # yield self.make_requests_from_url(self.search_url.format(currpage=self.currpage))
-        for i in xrange(176):
+
+        logger.debug(("cookies",response.request.cookies)) # todo get cookie
+        for i in xrange(5):
             try:
                 next_url = self.search_url.format(currpage=self.currpage)
 
@@ -152,20 +180,20 @@ class EsiSpider(CrawlSpider):
                 yield item
         elif wos_links.__len__() == 0:
             pass
-        #if self.currpage >= 10:
+            # if self.currpage >= 10:
             # todo get logout
             # yield Request("https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi", callback=self.after_logout)
             # return
 
-        # try:
-        #     self.currpage += 1
-        #
-        #     next_url = self.search_url.format(currpage=self.currpage)
-        #     logger.debug(('next_page', self.currpage))
-        #     # logger.debug(('next_url', next_url))
-        #     yield Request(next_url, callback=self.parse)
-        # except ValueError:
-        #     logger.debug(('extra_url', response.url))
+            # try:
+            #     self.currpage += 1
+            #
+            #     next_url = self.search_url.format(currpage=self.currpage)
+            #     logger.debug(('next_page', self.currpage))
+            #     # logger.debug(('next_url', next_url))
+            #     yield Request(next_url, callback=self.parse)
+            # except ValueError:
+            #     logger.debug(('extra_url', response.url))
 
             # logout_resp = s.get('https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi', headers=headers)
             # print logout_resp.status
@@ -173,11 +201,10 @@ class EsiSpider(CrawlSpider):
 
             # s.close()
 
-    def after_logout(self):
-        logger.debug("=====log out=====")
-
-    def logout(self):
-        logger.debug("=====log out=====")
-        yield Request("https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi", callback=self.after_logout)
-
-
+            # def logout(self):
+            #     logger.debug('Closing down with logout [%s]' % (self.logout_url))
+            #     return super(EsiSpider, self).logout()
+            #
+            # def logout_verify(self, response):
+            #     if 'Logged out' in response.body:
+            #         logger.debug('Closing down with logout [%s]' % (self.logout_url))
