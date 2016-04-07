@@ -1,26 +1,16 @@
-https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?
-option=E
-&searchby=N
-&hothigh=H
-&searchtitle=web
-&searchscientist=
-&searchinst=
-&searchcountry=
-&searchjournal=
-&x=27
-&y=10
 
-
+## 列表页
 https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi
 ?option=G
 &searchby=F
-&search=COMPUTER+SCIENCE
+&search=COMPUTER+SCIENCE    //领域 `+`:`%20`
 &hothigh=G
 &option=G
 &x=9
 &y=10
-&currpage=2
+&currpage=2 //page
 
+## wos 页面
 https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.cgi?
 &GWVersion=2
 &SrcAuth=ESI
@@ -35,7 +25,17 @@ https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.
 &SrcImageURL=
 
 
-
+## Number of Citations (by year): 过去10年 该论文每年被引次数 不包含当年 不累计
+https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+tabulargraphdata.cgi?
+articleid=000251197700021       //wos_no
+&search=COMPUTER%20SCIENCE
+&from=paperpage
+&name=COMPUTER%20SCIENCE
+&hothigh=G&option=G
+&searchby=F
+&rankpage=
+&currpage=1
+&sortby=1
 ```
 cookies = {
     "DSFirstAccess": "1453365010",
@@ -45,7 +45,7 @@ cookies = {
 }
 ```
 
-
+- [ ] 递归引用
 
 cgi
 表单提交
