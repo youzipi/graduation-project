@@ -25,6 +25,8 @@ from scrapy.http import Request
 
 
 class LogoutMixin(object):
+    logout_url = ""
+
     def __init__(self, logger):
         super(LogoutMixin, self).__init__()
         # start_requests() is the better place for this, but that makes
