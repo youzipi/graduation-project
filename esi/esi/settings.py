@@ -9,6 +9,9 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
+# 禁止重定向
+# REDIRECT_ENABLED = False
+
 BOT_NAME = 'esi'
 
 SPIDER_MODULES = ['esi.spiders']
@@ -24,7 +27,7 @@ MONGO_DOCNAME = 'test'
 # USER_AGENT = 'esi (+http://www.yourdomain.com)'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-# CONCURRENT_REQUESTS=32
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
@@ -67,6 +70,7 @@ MONGO_DOCNAME = 'test'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+    'esi.pipelines.DuplicatesPipeline': 300,
     'esi.pipelines.EsiPipeline': 300,
 }
 

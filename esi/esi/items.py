@@ -17,7 +17,7 @@ class EsiItem(scrapy.Item):
     citations = scrapy.Field()
 
     title = scrapy.Field()
-    author = scrapy.Field()
+    authors = scrapy.Field()
     abstract = scrapy.Field()
     keywords = scrapy.Field()
     pulished = scrapy.Field()

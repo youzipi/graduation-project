@@ -32,9 +32,9 @@ class EsiSpider(CrawlSpider, LogoutMixin):
 
     logout_url = "https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi"
 
-    rules = (
-        Rule(LinkExtractor(allow=("/*",)), callback='parse'),
-    )
+    # rules = (
+    #     Rule(LinkExtractor(allow=("/*",)), callback='parse'),
+    # )
 
     def __init__(self, *a, **kw):
         super(EsiSpider, self).__init__(*a, **kw)
@@ -92,7 +92,7 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         # yield self.make_requests_from_url(self.search_url.format(currpage=self.currpage))
 
         # logger.debug(("cookies", response.request.cookies))  # todo get cookie
-        for i in xrange(5):
+        for i in xrange(2):
             try:
                 next_url = self.search_url.format(currpage=self.currpage)
 
@@ -111,6 +111,7 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         </a>
         :param response:
         """
+
 
         # logger.debug(response.cookie)
         # s = requests.session()
@@ -161,13 +162,15 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         if length > 0:
             # if target_url.size > 0:
             for i in range(length):
-                wos_no = re.search("KeyUT=([\d]*)&", wos_links[i]).group(1)
+                wos_link = wos_links[i]
+                wos_no = re.search("KeyUT=([\d]*)&", wos_link).group(1)
                 citations = int(re.sub('[,|\t]', '', citations_list[i]))
 
-                year_citations = year_citations_list[i]
+                year_citations = year_citations_list[i]     # todo
+                yield Request(wos_link, callback=self.parse_wos_page)
 
                 item = EsiItem()
-                item['wos_link'] = wos_links[i]
+                item['wos_link'] = wos_link
                 item['wos_no'] = wos_no
                 item['citations'] = citations
 
@@ -187,3 +190,14 @@ class EsiSpider(CrawlSpider, LogoutMixin):
             #     yield Request(next_url, callback=self.parse)
             # except ValueError:
             #     logger.debug(('extra_url', response.url))
+    def parse_wos_page(self,response):
+        content = response.body
+        c = Selector(text=content)
+        title = c.css('.NEWfullRecord > form[name=correction_form]>input[name="00N70000002BdnX"]::attr(value)').extract()
+        fields = c.css('.FR_field')
+        pub_date = fields[5].css('value::text').extract()
+        suammary = fields[9].css('::text').extract()
+        pass
+        # wos_links = c.xpath('//td/a/img[contains(@src, "gotowos.gif")]/../@href').extract()
+        # citations_list = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/../text()[2]').extract()
+        # year_citations_list = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/../a/@href').extract()

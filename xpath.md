@@ -20,3 +20,5 @@ http://stackoverflow.com/questions/5738972/how-to-find-an-image-tag-by-filename-
 ```python
 //img[contains(@src, 'my_image.png')]
 ```
+# css
+body > div.EPAMdiv.main-container > div.NEWfullRecord > form
