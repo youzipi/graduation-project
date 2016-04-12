@@ -20,7 +20,9 @@ class EsiItem(scrapy.Item):
     authors = scrapy.Field()
     abstract = scrapy.Field()
     keywords = scrapy.Field()
+
     pulished = scrapy.Field()
+    pub_year = scrapy.Field()
 
     # Categories / Classification
     research_areas = scrapy.Field()

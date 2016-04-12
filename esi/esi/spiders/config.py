@@ -1,4 +1,7 @@
 # encoding=utf8
+import logging
+from threading import Thread, Event
+
 import requests
 # from bs4 import BeautifulSoup
 # import time
@@ -31,5 +34,30 @@ login_form_data = {
     'realm': u'本专科生',
     'btnSubmit': u'登陆',
 }
+
+
+class MyThread(Thread):
+    def __init__(self, function, interval=1):
+        """
+
+        :param event:
+        :param timeout:
+        :return:
+        """
+        Thread.__init__(self)
+        if not callable(function):
+            raise AssertionError("'{0}' is not an function!!".format(str(function)))
+        else:
+            self.func = function
+        self.interval = interval
+        self.stopped = Event()
+
+    def run(self):
+        while not self.stopped.wait(self.interval):
+            self.func()
+
+    def stop(self):
+        self.stopped.set()
+
 
 

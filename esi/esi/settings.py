@@ -8,9 +8,17 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+import logging
+
+file_handler = logging.handlers.RotatingFileHandler('esi.log', backupCount=5)
+
+
 
 # 禁止重定向
 # REDIRECT_ENABLED = False
+
+LOG_LEVEL = 'INFO'
+
 
 BOT_NAME = 'esi'
 
@@ -27,7 +35,7 @@ MONGO_DOCNAME = 'test'
 # USER_AGENT = 'esi (+http://www.yourdomain.com)'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 100
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
@@ -69,9 +77,11 @@ CONCURRENT_REQUESTS = 32
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
+# 数值越小,优先级越高
 ITEM_PIPELINES = {
     'esi.pipelines.DuplicatesPipeline': 300,
-    'esi.pipelines.EsiPipeline': 300,
+    'esi.pipelines.EsiPipeline': 500,
+    # 'esi.pipelines.EsiPipeline'
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
