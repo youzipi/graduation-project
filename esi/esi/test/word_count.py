@@ -46,14 +46,15 @@ class Count(object):
         # self.reset_result = reset_result + datetime.datetime.now().strftime("tmp_%Y-%m-%d_%H%M%S")
 
         self.rank_list = collections.defaultdict(int)
+        # todo 用numpy的容器替代
 
-    def __conn(self):
+    def _conn(self):
         self.client = MongoClient(self.host)
         self.db = self.client[self.db]
         self.collection = self.db[self.doc_name]
 
     def count(self):
-        self.__conn()
+        self._conn()
 
         import re
 
@@ -66,29 +67,33 @@ class Count(object):
             # split
             word_list = re.split('[\s\[\]\?().,;:\'"/]+', words)
 
-            for w in word_list:
-                # split 产生了空白字符
-                w_len = len(w)
-                if w_len == 0:
-                    continue
-                # 有些关键字不能 改成小写 如 C,R,直接保存,因为lemma 会 把所有单词lower
-                # if w_len == 1:
-                #     rank_list[w] += 1
-                # 先小写,为了在stop_words 中筛掉
-                if w_len > 1:
-                    w = w.lower()
-                # remove stopwords
-                if w in sw:
-                    continue
+            self._collect_words(word_list)
 
-                else:
-                    # 4 stem
-                    # w = stemmer.stem(w)
-                    # w = lemmatizer.lemmatize(w)
-                    # w = singularize(w)
-                    w = lemma(w)
-                    self.rank_list[w] += 1
+    def _collect_words(self, word_list):
+        for w in word_list:
+            # split 产生了空白字符
+            w_len = len(w)
+            if w_len == 0:
+                continue
+            # 有些关键字不能 改成小写 如 C,R,直接保存,因为lemma 会 把所有单词lower
+            # if w_len == 1:
+            #     rank_list[w] += 1
+            # 先小写,为了在stop_words 中筛掉
+            if w_len > 1:
+                w = w.lower()
+            # remove stopwords
+            if w in sw:
+                continue
 
+            else:
+                # 4 stem
+                # w = stemmer.stem(w)
+                # w = lemmatizer.lemmatize(w)
+                # w = singularize(w)
+                w = lemma(w)
+                self.rank_list[w] += 1
+
+    def _save_docs(self):
         print len(self.rank_list)
 
         # ex:{'_id':'data','count':2355}
