@@ -4,12 +4,14 @@ from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
 from pattern.text.en import lemma
 from pymongo import MongoClient
-
+import collections
 
 # stemmer = SnowballStemmer("english")
 lemmatizer = WordNetLemmatizer()
 
 sw = list(stopwords.words('english'))
+
+
 # other_words = ['used','propose','provide','show','set','also']
 # sw.extend(other_words)
 
@@ -43,6 +45,8 @@ class Count(object):
         self.reset_result = reset_result
         # self.reset_result = reset_result + datetime.datetime.now().strftime("tmp_%Y-%m-%d_%H%M%S")
 
+        self.rank_list = collections.defaultdict(int)
+
     def __conn(self):
         self.client = MongoClient(self.host)
         self.db = self.client[self.db]
@@ -52,9 +56,6 @@ class Count(object):
         self.__conn()
 
         import re
-        import collections
-
-        rank_list = collections.defaultdict(int)
 
         docs = self.collection.find()
         for doc in docs:
@@ -86,12 +87,12 @@ class Count(object):
                     # w = lemmatizer.lemmatize(w)
                     # w = singularize(w)
                     w = lemma(w)
-                    rank_list[w] += 1
+                    self.rank_list[w] += 1
 
-        print len(rank_list)
+        print len(self.rank_list)
 
         # ex:{'_id':'data','count':2355}
-        g = ({'_id': i, 'count': rank_list[i]} for i in rank_list)
+        g = ({'_id': i, 'count': self.rank_list[i]} for i in self.rank_list)
 
         self.target_collection = self.db[self.result]
 
