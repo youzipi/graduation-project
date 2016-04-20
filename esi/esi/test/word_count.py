@@ -5,6 +5,7 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from pattern.text.en import lemma
 from pymongo import MongoClient
 import collections
+import re
 
 # stemmer = SnowballStemmer("english")
 lemmatizer = WordNetLemmatizer()
@@ -20,18 +21,9 @@ class Count(object):
     def __init__(self, host='127.0.0.1:27017', db_name='esi', doc_name='test',
                  key=None, result=None,
                  show_result=True,
-                 reset_result=True):
-        """
-
-        :param host:
-        :param db:
-        :param doc_name:
-        :param key:
-        :param result:
-        :param show_result:
-        :param reset_result:
-        :return:
-        """
+                 reset_result=True,
+                 is_arr=False,
+                 ):
         self.host = host
         self.db_name = db_name
         self.doc_name = doc_name
@@ -45,29 +37,40 @@ class Count(object):
         self.reset_result = reset_result
         # self.reset_result = reset_result + datetime.datetime.now().strftime("tmp_%Y-%m-%d_%H%M%S")
 
+        self.is_arr = is_arr
+
         self.rank_list = collections.defaultdict(int)
         # todo 用numpy的容器替代
 
     def _conn(self):
         self.client = MongoClient(self.host)
-        self.db = self.client[self.db]
+        self.db = self.client[self.db_name]
         self.collection = self.db[self.doc_name]
 
     def count(self):
         self._conn()
 
-        import re
-
         docs = self.collection.find()
-        for doc in docs:
-            words = doc[self.key]
-            # isinstance(doc['keywords'],list) # true
 
-            assert isinstance(words, (str, unicode))
-            # split
-            word_list = re.split('[\s\[\]\?().,;:\'"/]+', words)
+        if self.is_arr:
+            for doc in docs:
+                word_list = doc[self.key]
+                self._collect_words_d(word_list)
+        else:
+            for doc in docs:
+                words = doc[self.key]
+                assert isinstance(words, (str, unicode))
+                # split
+                word_list = re.split('[\s\[\]\?().,;:\'"/]+', words)
+                self._collect_words(word_list)
 
-            self._collect_words(word_list)
+        self._save_docs()
+
+    def _collect_words_d(self, word_list):
+        for w in word_list:  # type: str
+            # 去除左右空格
+            w = w.strip()
+            self.rank_list[w] += 1
 
     def _collect_words(self, word_list):
         for w in word_list:
@@ -105,7 +108,7 @@ class Count(object):
         if self.reset_result:
             self.target_collection.drop()
 
-        # insert many
+        # insert into mongoDB
         self.target_collection.insert_many(i for i in g)
 
         if self.show_result:
@@ -120,6 +123,12 @@ class Count(object):
 
 if __name__ == "__main__":
     c = Count(key='abstract', result='AR3')
+    c.count()
+
+    c = Count(key='research_areas', result='area_rank', is_arr=True)
+    c.count()
+
+    c = Count(key='keywords', result='keyword_rank', is_arr=True)
     c.count()
 
 """The metafor package provides functions for conducting meta-analyses in R. The package includes functions for fitting the meta-analytic fixed- and random-effects models and allows for the inclusion of moderators variables (study-level covariates) in these models. Meta-regression analyses with continuous and categorical moderators can be conducted in this way. Functions for the Mantel-Haenszel and Peto's one-step method for meta-analyses of 2 x 2 table data are also available. Finally, the package provides various plot functions (for example, for forest, funnel, and radial plots) and functions for assessing the model fit, for obtaining case diagnostics, and for tests of publication bias."""
