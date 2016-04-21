@@ -26,7 +26,7 @@
 # - 两边都特别常用的
 # - 日本特别常用，而中国不是太常用的
 
-# In[69]:
+# In[1]:
 
 
 
@@ -34,7 +34,7 @@ import pandas as pd
 import numpy as np
 
 
-# In[251]:
+# In[2]:
 
 def render(path):
     with open(path,'r') as file:
@@ -49,12 +49,12 @@ def render(path):
     return df
 
 
-# In[252]:
+# In[3]:
 
 jp_df = render('./japan-nianhao.log')
 
 
-# In[199]:
+# In[4]:
 
 a = unicode(jp_datas[0],"utf-8")
 
@@ -91,66 +91,66 @@ type(a)
 print a
 
 
-# In[307]:
+# In[5]:
 
 jp_df[u'nianhao'].value_counts()
 
 
-# In[243]:
+# In[7]:
 
 jp_counts = len(jp_df[u'nianhao'].values) # 一共使用了506个字次
 jp_counts
 
 
-# In[245]:
+# In[9]:
 
 jp_words = len(np.unique(jp_df[u'nianhao'].values)) # 一共使用了72个不同的字
 jp_words
 
 
-# In[246]:
+# In[10]:
 
 jp_counts/float(jp_words)
 
 
-# In[253]:
+# In[11]:
 
 cn_df = render('./china-nianhao.log')
 
 
-# In[308]:
+# In[12]:
 
 cn_df[u'nianhao'].value_counts()[:20]
 
 
-# In[255]:
+# In[13]:
 
 cn_counts = len(cn_df[u'nianhao'].values) 
 cn_counts
 
 
-# In[258]:
+# In[14]:
 
 cn_words = len(np.unique(cn_df[u'nianhao'].values)) 
 cn_words
 
 
-# In[270]:
+# In[15]:
 
 cn_counts/float(cn_words)
 
 
-# In[276]:
+# In[16]:
 
 cn_unique_words = pd.DataFrame(data=np.unique(cn_df[u'nianhao'].values),columns=['nianhao'])
 
 
-# In[277]:
+# In[17]:
 
 jp_unique_words = pd.DataFrame(data=np.unique(jp_df[u'nianhao'].values),columns=['nianhao'])
 
 
-# In[291]:
+# In[18]:
 
 jp_index = pd.Index(jp_unique_words)
 print jp_index
@@ -158,21 +158,16 @@ cn_index = pd.Index(cn_unique_words)
 print cn_index
 
 
-# In[302]:
+# In[19]:
 
 both = cn_index.intersection(jp_index)
 print both
 print both.size  # 59
 
 
-# In[305]:
+# In[20]:
 
 jp_only = jp_index.difference(cn_index)
 print jp_only
 print jp_only.size  # 13个，只在日本年号中出现过的词
-
-
-# In[ ]:
-
-
 
