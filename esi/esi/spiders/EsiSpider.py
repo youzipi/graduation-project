@@ -3,6 +3,8 @@ import logging
 import logging.handlers
 
 import re
+
+import pymongo
 import requests
 import scrapy
 from scrapy.selector import Selector
@@ -13,6 +15,7 @@ from scrapy.linkextractors import LinkExtractor
 from scrapy.xlib.pydispatch import dispatcher
 
 from config import headers, login_form_data,MyThread
+from scrapy.conf import settings
 from ..settings import file_handler
 from .mixin.logoutmixin import LogoutMixin
 from ..items import EsiItem
@@ -37,6 +40,8 @@ class EsiSpider(CrawlSpider, LogoutMixin):
 
     logout_url = "https://vpn.nuist.edu.cn/dana-na/auth/logout.cgi"
 
+    base_url = "https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+"
+
     # rules = (
     #     Rule(LinkExtractor(allow=("/*",)), callback='parse'),
     # )
@@ -54,28 +59,17 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         self.logger.logger.addHandler(file_handler)
         self.logger.logger.setLevel(logging.DEBUG)
 
-        self.thread = MyThread(self.keep_cookie,interval=5)
+        self.thread = MyThread(self.keep_cookie, interval=60)
 
 
-    # def start_requests(self):
-    # s = requests.session()
+        connection = pymongo.MongoClient(
+            settings['MONGO_HOST'],
+            settings['MONGO_PORT']
+        )
+        db = connection[settings['MONGO_DBNAME']]
+        self.post = db[settings['MONGO_DOCNAME']]
 
-    #  post_req = s.post('https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi',
-    # headers = headers,
-    # data = login_form_data)
-    # post_req.encoding = 'utf8'
 
-    # sc_resp = FormRequest(url='https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi',  # method="POST",
-    #                     headers=headers,
-    #                    formdata=login_form_data)
-
-    # search_url = """https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search={search}&hothigh=G&option=G&x=19&y=2&currpage={currpage}
-    # """.format(search='COMPUTER+SCIENCE', currpage=1)
-
-    # return [Request(url=search_url, headers=headers, cookies=sc_resp.cookies)]
-
-    # return [s.get(search_url)]
-    # return [scrapy.FormRequest]
 
     def _spider_opend(self):
         logger.debug("+++++++spider_opened++++")
@@ -140,24 +134,6 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         """
 
 
-        # logger.debug(response.cookie)
-        # s = requests.session()
-
-        # login_resp = s.post('https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi',
-        #                     headers=headers,
-        #                     data=login_form_data)
-        # login_resp.encoding = 'utf8'
-        # logger.debug("cookie=", login_resp.cookies.get_dict())
-        # print "cookie=", login_resp.cookies.get_dict()
-
-        # print response
-        # for i in xrange(1):
-        #     search_url = """
-        #     https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi?option=G&searchby=F&search=COMPUTER+SCIENCE&hothigh=G&option=G&x=8&y=5"""
-        #
-        #     rq_resp = s.get(search_url)
-        #
-        #     content = rq_resp.text
         content = response.body
         c = Selector(text=content)
         #
@@ -179,7 +155,8 @@ class EsiSpider(CrawlSpider, LogoutMixin):
 
         wos_links = c.xpath('//td/a/img[contains(@src, "gotowos.gif")]/../@href').extract()
         citations_list = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/../text()[2]').extract()
-        year_citations_list = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/../a/@href').extract()
+
+        # year_citations_list = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/../a/@href').extract()
 
         length = len(wos_links)
 
@@ -193,16 +170,29 @@ class EsiSpider(CrawlSpider, LogoutMixin):
                 wos_no = re.search("KeyUT=([\d]*)&", wos_link).group(1)
                 citations = int(re.sub('[,|\t]', '', citations_list[i]))
 
-                year_citations = year_citations_list[i]     # todo
+                # year_citations_link = year_citations_list[i]     # todo
+
+                """
+                Number of Citations (by year) 最短url
+                from=paperpage
+                articleid=`wos_no`
+                """
+                year_citations_link = self.base_url + 'tabulargraphdata.cgi?from=paperpage&articleid='+wos_no
 
                 item = EsiItem()
                 item['wos_link'] = wos_link
                 item['wos_no'] = wos_no
                 item['citations'] = citations
 
-                # yield item
+                # if self.post.find({'wos_no': wos_no}).count() > 0:
+                #     yield item
+                # else:
+                    # yield Request(wos_link, callback=self.parse_wos_page, meta={'item': item})
+                if self.post.find({'wos_no': wos_no,'authors': None}).count() > 0:
+                    yield Request(wos_link, callback=self.parse_wos_page, meta={'item': item})
 
-                yield Request(wos_link, callback=self.parse_wos_page, meta={'item': item})
+                # yield Request(year_citations_link, callback=self.parse_year_citations, meta={'item': item})
+
 
         elif length == 0:
             pass
@@ -224,6 +214,9 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         logger.info(("parse_wos_page.cookies=", response.headers['Set-Cookie']))
 
         item = response.meta['item']
+
+        logger.info(("wos_no=", item['wos_no']))
+
         content = response.body
         c = Selector(text=content)
         title = c.css('.NEWfullRecord > form[name=correction_form]>input[name="00N70000002BdnX"]::attr(value)').extract()
@@ -239,6 +232,9 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         research_areas =c.xpath('//span[contains(@class,"FR_label") and contains(text(),"Research Areas")]/../text()').extract()
         research_areas = list_get(research_areas, 1)
 
+
+        authors = c.xpath('//span[contains(@class,"FR_label") and contains(text(),"By")]/../a/text()').extract()
+
         # if research_areas is None:
         #     yield FormRequest(
         #             "https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi",
@@ -253,19 +249,49 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         title = list_get(title)
         pub_year = int(list_get(pub_years))
         published = list_get(publisheds)
-        abstract = list_get(abstracts)
+        # authors = list_get(authors)
+
         abstract = list2str(abstracts)
+        # 去除两边的空白
+        abstract = abstract.strip()
+        keywords = map(lambda x: x.strip(), keywords)
+        research_areas = map(lambda x: x.strip(), research_areas)
         #
         item['title'] = title
+        item['authors'] = authors
         item['pulished'] = published
         item['abstract'] = abstract
         item['pub_year'] = pub_year
+
         item['keywords'] = keywords
         item['research_areas'] = research_areas
-        yield item
+        return item
         # wos_links = c.xpath('//td/a/img[contains(@src, "gotowos.gif")]/../@href').extract()
         # citations_list = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/../text()[2]').extract()
         # year_citations_list = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/../a/@href').extract()
+
+    def parse_year_citations(self, response):
+        item = dict()
+        item = response.meta['item']
+        content = response.body
+        c = Selector(text=content)
+        year_citations = c.xpath('/html/body/table[5]/tr[2]/td/center/table/tr[2]/td/text()').extract() #type: list
+
+        _year_citations = {}
+
+        cur_year = 2016
+        start_year = 2005 # todo 不知道
+
+        years = cur_year -start_year
+
+        for i in range(years):
+            _year_citations.update({str(start_year+i): int(list_get(year_citations, i).strip())})
+
+        item['year_citations'] = _year_citations
+
+
+        return item
+
 
 
 def list_get(l, i=0):

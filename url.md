@@ -1,3 +1,5 @@
+https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+
+
 
 ## 列表页
 https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+paperpage.cgi
@@ -26,6 +28,7 @@ https://vpn.nuist.edu.cn/gateway/,DanaInfo=.agbvh0f4G4nlzrx13A2ww0zVzA.+Gateway.
 
 
 ## Number of Citations (by year): 过去10年 该论文每年被引次数 不包含当年 不累计
+```
 https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+tabulargraphdata.cgi?
 articleid=000251197700021       //wos_no
 &search=COMPUTER%20SCIENCE
@@ -36,6 +39,14 @@ articleid=000251197700021       //wos_no
 &rankpage=
 &currpage=1
 &sortby=1
+```
+
+```
+https://vpn.nuist.edu.cn/,DanaInfo=.aetkC0jhvntxz8ysswvRv87+tabulargraphdata.cgi?
+from=paperpage
+&articleid=000251197700021       //wos_no
+```
+
 ```
 cookies = {
     "DSFirstAccess": "1453365010",

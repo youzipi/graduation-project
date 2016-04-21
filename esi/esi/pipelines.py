@@ -23,30 +23,82 @@ class EsiPipeline(object):
     def __init__(self):
         host = settings['MONGO_HOST']
         port = settings['MONGO_PORT']
-        conn = pymongo.MongoClient(host=host, port=port)
+        client = pymongo.MongoClient(host=host, port=port)
 
         db_name = 'esi'
         doc_name = 'test'
-        db = conn[db_name]
-        self.post = db[doc_name]
+        db = client[db_name]
+        self.collection = db[doc_name]
 
     def process_item(self, item, spider):
         logger.debug(("item=", item))
         esi_info = dict(item)
         # self.post.insert(esi_info)
-        if self.post.find({'wos_no': item['wos_no']}).count() == 1:
+        # if self.collection.find({'wos_no': item.get('wos_no')}).count() == 1:
+        if self.collection.find({'wos_no': item.get('wos_no'),'authors':None}).count() == 1:
             # if exist,update citations
-            self.post.update_one({'wos_no': esi_info['wos_no']}, {"$set": {'citations': item['citations']}})
+            self.collection.update_one({'wos_no': esi_info.get('wos_no')}, {"$set": {
+                'citations': item.get('citations'),
+                # 'year_citations': item.get('year_citations'),
+                'authors': item.get('authors'),
+            }
+            })
 
-        # elif item.get('title') is None:
+            # self.collection.update_one({'wos_no': esi_info.get('wos_no')}, {"$set": {
+            #     'authors': item.get('authors'),
+            #     }
+            # })
+            # self.collection.update_one({'wos_no': esi_info.get('wos_no')},{"$set": {'year_citations': item.get('year_citations')}})
+
+            # elif item.get('title') is None:
+            # pass
+            # if has no wos_info, send a request to wos
+            # yield Request(item['wos_link'], callback=spider.parse_wos_page, meta={'item': item})
+            # request = Request(item['wos_link'], callback=spider.parse_wos_page, meta={'item': item})
+            # return request
+        # else:
+        #     self.collection.insert_one(esi_info)
+            # self.post.update_one({'wos_no': esi_info.get('wos_no')}, {"$set": esi_info}, upsert=True)
+            # return item
+
+
+class YearCitationsPipeline(object):
+    def __init__(self):
+        host = settings['MONGO_HOST']
+        port = settings['MONGO_PORT']
+        client = pymongo.MongoClient(host=host, port=port)
+
+        db_name = 'esi'
+        doc_name = 'test'
+        db = client[db_name]
+        self.collection = db[doc_name]
+
+    def process_item(self, item, spider):
+        """
+
+        :param item:
+        :param spider:
+        :return:
+        """
+        if item.get('citations', 0) != None:
+            return item
+        logger.debug(("item=", item))
+        esi_info = dict(item)
+        # self.post.insert(esi_info)
+        if self.collection.find({'wos_no': item.get('wos_no')}).count() == 1:
+            # if exist,update citations
+            self.collection.update_one({'wos_no': esi_info.get('wos_no')},
+                                       {"$set": {'citations': item.get('citations')}})
+
+            # elif item.get('title') is None:
             # pass
             # if has no wos_info, send a request to wos
             # yield Request(item['wos_link'], callback=spider.parse_wos_page, meta={'item': item})
             # request = Request(item['wos_link'], callback=spider.parse_wos_page, meta={'item': item})
             # return request
         else:
-            self.post.insert_one(esi_info)
-            # self.post.update_one({'wos_no': esi_info['wos_no']}, {"$set": esi_info}, upsert=True)
+            self.collection.insert_one(esi_info)
+            # self.post.update_one({'wos_no': esi_info.get('wos_no')}, {"$set": esi_info}, upsert=True)
             # return item
 
 
@@ -55,8 +107,8 @@ class DuplicatesPipeline(object):
         self.ids_seen = set()
 
     def process_item(self, item, spider):
-        if item['wos_no'] in self.ids_seen:
+        if item.get('wos_no') in self.ids_seen:
             raise DropItem("Duplicate item found: %s" % item)
         else:
-            self.ids_seen.add(item['wos_no'])
+            self.ids_seen.add(item.get('wos_no'))
             return item

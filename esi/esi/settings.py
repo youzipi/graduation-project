@@ -17,7 +17,7 @@ file_handler = logging.handlers.RotatingFileHandler('esi.log', backupCount=5)
 # 禁止重定向
 # REDIRECT_ENABLED = False
 
-LOG_LEVEL = 'INFO'
+# LOG_LEVEL = 'INFO'
 
 
 BOT_NAME = 'esi'
