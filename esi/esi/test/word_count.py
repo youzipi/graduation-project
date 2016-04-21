@@ -16,6 +16,11 @@ sw = list(stopwords.words('english'))
 # other_words = ['used','propose','provide','show','set','also']
 # sw.extend(other_words)
 
+is_num = re.compile(ur'^[\d|-|=]+$')
+"""
+"""
+
+
 
 class Count(object):
     def __init__(self, host='127.0.0.1:27017', db_name='esi', doc_name='test',
@@ -74,8 +79,17 @@ class Count(object):
             self.rank_list[w] += 1
 
     def _collect_words(self, word_list):
+        """
+        数据清洗
+        :param word_list:
+        :return:
+        """
         for w in word_list:
-            # split 产生了空白字符
+
+            # todo 判断数字
+            if len(re.findall(is_num, w)) > 0:
+                continue
+
             w_len = len(w)
             if w_len == 0:
                 continue
@@ -85,7 +99,8 @@ class Count(object):
             # 先小写,为了在stop_words 中筛掉
             if w_len > 1:
                 w = w.lower()
-            # remove stopwords
+
+            # 除去 stopwords
             if w in sw:
                 continue
 
