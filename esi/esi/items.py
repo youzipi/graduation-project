@@ -24,6 +24,8 @@ class EsiItem(scrapy.Item):
     pulished = scrapy.Field()
     pub_year = scrapy.Field()
 
+    year_citations = scrapy.Field()
+
     # Categories / Classification
     research_areas = scrapy.Field()
     WOS_categories = scrapy.Field()
