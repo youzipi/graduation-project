@@ -70,6 +70,7 @@ class Count(object):
         for w in word_list:  # type: str
             # 去除左右空格
             w = w.strip()
+            w = lemma(w)
             self.rank_list[w] += 1
 
     def _collect_words(self, word_list):
@@ -151,3 +152,16 @@ stemmer.stem(word)
 
 WordNetLemmatizer
 """
+
+
+def dict2intDict(d):
+    """
+    因为mongoDB里面的dict以object形式存在(1.key 只能为 字符串 => 2. key 的顺序乱了(还有python的原因))
+    ,这里重新构造一个 key 为 int 的 dict
+    :param d:
+    :return:
+    """
+    target = {}
+    for i in d:
+        target.update({int(i): d[i]})
+    return target
