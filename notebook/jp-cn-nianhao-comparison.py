@@ -5,7 +5,13 @@
 # 
 # https://zh.wikipedia.org/wiki/日本年號列表
 # 
+# 645~1989
+# 
+# 明治（1868）之后，“一世一元”，谥号即年号，在世称为“今上天皇”
+# 
 # https://zh.wikipedia.org/wiki/中国年号列表
+# 
+# BD140～1949
 # 
 # ```js
 # a = $('#mw-content-text > table> tbody > tr > td:nth-child(2) > a');
@@ -15,6 +21,10 @@
 # for (i in a){console.log(a[i].innerText)};
 # ```
 # 浏览器控制台，save as... [xxx.log]
+
+# - 出现率前20% 的使用率
+# - 两边都特别常用的
+# - 日本特别常用，而中国不是太常用的
 
 # In[69]:
 
@@ -108,9 +118,9 @@ jp_counts/float(jp_words)
 cn_df = render('./china-nianhao.log')
 
 
-# In[259]:
+# In[308]:
 
-cn_df[u'nianhao'].value_counts()[:10]
+cn_df[u'nianhao'].value_counts()[:20]
 
 
 # In[255]:
@@ -152,14 +162,14 @@ print cn_index
 
 both = cn_index.intersection(jp_index)
 print both
-print both.size
+print both.size  # 59
 
 
 # In[305]:
 
 jp_only = jp_index.difference(cn_index)
 print jp_only
-print jp_only.size
+print jp_only.size  # 13个，只在日本年号中出现过的词
 
 
 # In[ ]:
