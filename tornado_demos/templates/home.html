@@ -1,0 +1,34 @@
+{% autoescape message %}
+{% extends "base.html" %}
+
+{% block body %}
+<v-table :columns="columns" :data-source="dataSource"></v-table>
+
+<div id="app">
+    <li v-for="paper in papers">
+        <label for="">{{! paper.citations}}</label>
+        <a href="/p/{{! paper._id.$oid }}">
+            {{! paper.title }}
+        </a>
+    </li>
+</div>
+<script>
+    new Vue({
+                el: '#app',
+                ready: function () {
+                    this.$http.get('/v1/top', function (data) {
+                        console.log(data);
+                        this.$set('papers', data);
+                    }).error(function (data, status, request) {
+                        console.log('fail' + status + "," + request);
+                    })
+                },
+                data: {}
+            }
+    )
+
+</script>
+
+{% end %}
+
+
