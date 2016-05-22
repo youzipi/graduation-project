@@ -2,24 +2,27 @@
 import datetime
 from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
+# from nltk.stem import SnowballStemmer
 from pattern.text.en import lemma
 from pymongo import MongoClient
 import collections
 import re
 
 # stemmer = SnowballStemmer("english")
+splits = re.compile('[\s\[\]\?().,;:\'"/]+')
 lemmatizer = WordNetLemmatizer()
 
-sw = list(stopwords.words('english'))
+stopwords = list(stopwords.words('english'))
+other_words = ['used', 'propose', 'provide', 'show', 'set', 'also']
+stopwords.extend(other_words)
+stopwords = [unicode(line.strip('\n')) for line in open('./stop_words.txt')]
+# str 13041
+# unicode 后 13042
+# C,R,go
 
-
-# other_words = ['used','propose','provide','show','set','also']
-# sw.extend(other_words)
-
-is_num = re.compile(ur'^[\d|-|=]+$')
+is_num = re.compile('^[\d|-|=]+$')
 """
 """
-
 
 
 class Count(object):
@@ -66,7 +69,7 @@ class Count(object):
                 words = doc[self.key]
                 assert isinstance(words, (str, unicode))
                 # split
-                word_list = re.split('[\s\[\]\?().,;:\'"/]+', words)
+                word_list = re.split(splits, words)
                 self._collect_words(word_list)
 
         self._save_docs()
@@ -101,7 +104,12 @@ class Count(object):
                 w = w.lower()
 
             # 除去 stopwords
-            if w in sw:
+            if w in stopwords:
+                continue
+
+            w = lemma(w)
+            # 再次除去 stopwords
+            if w in stopwords:
                 continue
 
             else:
@@ -109,7 +117,6 @@ class Count(object):
                 # w = stemmer.stem(w)
                 # w = lemmatizer.lemmatize(w)
                 # w = singularize(w)
-                w = lemma(w)
                 self.rank_list[w] += 1
 
     def _save_docs(self):
@@ -123,6 +130,7 @@ class Count(object):
         # drop old result_db
         if self.reset_result:
             self.target_collection.drop()
+            print("===drop {0}===".format(self.result))
 
         # insert into mongoDB
         self.target_collection.insert_many(i for i in g)
@@ -141,11 +149,11 @@ if __name__ == "__main__":
     c = Count(key='abstract', result='AR3')
     c.count()
 
-    c = Count(key='research_areas', result='area_rank', is_arr=True)
-    c.count()
-
-    c = Count(key='keywords', result='keyword_rank', is_arr=True)
-    c.count()
+    # c = Count(key='research_areas', result='area_rank', is_arr=True)
+    # c.count()
+    #
+    # c = Count(key='keywords', result='keyword_rank', is_arr=True)
+    # c.count()
 
 """The metafor package provides functions for conducting meta-analyses in R. The package includes functions for fitting the meta-analytic fixed- and random-effects models and allows for the inclusion of moderators variables (study-level covariates) in these models. Meta-regression analyses with continuous and categorical moderators can be conducted in this way. Functions for the Mantel-Haenszel and Peto's one-step method for meta-analyses of 2 x 2 table data are also available. Finally, the package provides various plot functions (for example, for forest, funnel, and radial plots) and functions for assessing the model fit, for obtaining case diagnostics, and for tests of publication bias."""
 

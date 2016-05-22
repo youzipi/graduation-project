@@ -82,3 +82,6 @@ wos_no:
 - 000311016400008
 
 ## python dict Ordereddict
+
+## 建立新会话
+https://202.195.224.171/,DanaInfo=.apduC0jhvntxz8ysswvRv87+SessionError.cgi?DestApp=ESI&CSID=P28Lztcyp39TgZ6TA3t&Error=LOADED+SESSION+REQUIRED

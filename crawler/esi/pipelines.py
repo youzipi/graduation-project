@@ -11,7 +11,6 @@ from scrapy.exceptions import DropItem
 
 from .settings import file_handler
 from items import EsiItem
-from scrapy.conf import settings
 
 import pymongo
 
@@ -20,29 +19,52 @@ logger.addHandler(file_handler)
 
 
 class EsiPipeline(object):
-    def __init__(self):
-        host = settings['MONGO_HOST']
-        port = settings['MONGO_PORT']
+    settings = None
+    collection = None
+
+
+    # def __init__(self):
+    #     pass
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        ext = cls()
+        ext.settings = crawler.settings
+
+        host = ext.settings['MONGO_HOST']
+        port = ext.settings['MONGO_PORT']
         client = pymongo.MongoClient(host=host, port=port)
 
-        db_name = 'esi'
-        doc_name = 'test'
+        db_name = ext.settings['MONGO_DBNAME']
+        doc_name = ext.settings['MONGO_DOCNAME']
         db = client[db_name]
-        self.collection = db[doc_name]
+        ext.collection = db[doc_name]
+
+        return ext
+
+    # def __init__(self):
+    #     host = settings['MONGO_HOST']
+    #     port = settings['MONGO_PORT']
+    #     client = pymongo.MongoClient(host=host, port=port)
+    #
+    #     db_name = 'esi'
+    #     doc_name = 'test'
+    #     db = client[db_name]
+    #     self.collection = db[doc_name]
 
     def process_item(self, item, spider):
         logger.debug(("item=", item))
         esi_info = dict(item)
-        # self.post.insert(esi_info)
+        self.collection.insert(esi_info)
+
         # if self.collection.find({'wos_no': item.get('wos_no')}).count() == 1:
-        if self.collection.find({'wos_no': item.get('wos_no'),'authors':None}).count() == 1:
-            # if exist,update citations
-            self.collection.update_one({'wos_no': esi_info.get('wos_no')}, {"$set": {
-                'citations': item.get('citations'),
-                # 'year_citations': item.get('year_citations'),
-                'authors': item.get('authors'),
-            }
-            })
+        #     # if exist,update citations
+        #     self.collection.update_one({'wos_no': esi_info.get('wos_no')}, {"$set": {
+        #         'citations': item.get('citations'),
+        #         # 'year_citations': item.get('year_citations'),
+        #         'authors': item.get('authors'),
+        #     }
+        #     })
 
             # self.collection.update_one({'wos_no': esi_info.get('wos_no')}, {"$set": {
             #     'authors': item.get('authors'),
@@ -56,24 +78,42 @@ class EsiPipeline(object):
             # yield Request(item['wos_link'], callback=spider.parse_wos_page, meta={'item': item})
             # request = Request(item['wos_link'], callback=spider.parse_wos_page, meta={'item': item})
             # return request
-        # else:
-        #     self.collection.insert_one(esi_info)
+            # else:
+            #     self.collection.insert_one(esi_info)
             # self.post.update_one({'wos_no': esi_info.get('wos_no')}, {"$set": esi_info}, upsert=True)
             # return item
 
 
 class YearCitationsPipeline(object):
-    def __init__(self):
-        host = settings['MONGO_HOST']
-        port = settings['MONGO_PORT']
+    settings = None
+    collection = None
+    # def __init__(self):
+    #     host = settings['MONGO_HOST']
+    #     port = settings['MONGO_PORT']
+    #     client = pymongo.MongoClient(host=host, port=port)
+    #
+    #     db_name = 'esi'
+    #     doc_name = 'test'
+    #     db = client[db_name]
+    #     self.collection = db[doc_name]
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        ext = cls()
+        ext.settings = crawler.settings
+
+        host = ext.settings['MONGO_HOST']
+        port = ext.settings['MONGO_PORT']
         client = pymongo.MongoClient(host=host, port=port)
 
-        db_name = 'esi'
-        doc_name = 'test'
+        db_name = ext.settings['MONGO_DBNAME']
+        doc_name = ext.settings['MONGO_DOCNAME']
         db = client[db_name]
-        self.collection = db[doc_name]
+        ext.collection = db[doc_name]
 
-    def process_item(self, item, spider):
+        return ext
+
+    def process_item(self, item,spider):
         """
 
         :param item:
@@ -85,7 +125,7 @@ class YearCitationsPipeline(object):
         logger.debug(("item=", item))
         esi_info = dict(item)
         # self.post.insert(esi_info)
-        if self.collection.find({'wos_no': item.get('wos_no')}).count() == 1:
+        if self.collection.find({'wos_no': item.get('wos_no')}).clean() == 1:
             # if exist,update citations
             self.collection.update_one({'wos_no': esi_info.get('wos_no')},
                                        {"$set": {'citations': item.get('citations')}})

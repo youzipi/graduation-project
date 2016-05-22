@@ -1,4 +1,4 @@
-db.test.find({}, {"research_areas": 1}).forEach(function (doc) {
+db.test.find({}, {"keywords": 1}).forEach(function (doc) {
     var cleaned = [];
     doc.research_areas.forEach(function (s) {
         cleaned.push(s.trim())

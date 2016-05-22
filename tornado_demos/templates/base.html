@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>{{ escape(handler.settings["blog_title"]) }}</title>
-    <link rel="stylesheet" href="{{ static_url('blog.css') }}" type="text/css">
-    <script src="../static/js/vue.js"></script>
-    <script src="../static/js/vue-resource.js"></script>
-    {% block head %}{% end %}
+  <meta charset="UTF-8">
+  <title>{{ escape(handler.settings["blog_title"]) }}</title>
+  <link rel="stylesheet" href="../static/bootstrap/bootstrap.min.css" type="text/css">
+
+  <!--<link rel="stylesheet" href="{{ static_url('css/base.css') }}" type="text/css">-->
+  <link rel="stylesheet" href="../static/css/base.css" type="text/css">
+
+  <script src="../static/lib/vue.js"></script>
+  <script src="../static/lib/vue-resource.js"></script>
+  {% block head %}{% end %}
 </head>
 <body>
-<div id="body">
-    <div id="header">
-        <div style="float:right">
-            {% if current_user %}
-            <a href="/compose">{{ _("New post") }}</a> -
-            <a href="/auth/logout?next={{ url_escape(request.uri) }}">{{ _("Sign out") }}</a>
-            {% else %}
-            {% raw _('<a href="%(url)s">Sign in</a> to compose/edit') % {"url": "/auth/login?next=" +
-            url_escape(request.uri)} %}
-            {% end %}
-        </div>
-        <h1><a href="/">{{ escape(handler.settings["blog_title"]) }}</a></h1>
+
+<div class="body">
+  <div class="header">
+    <div style="float:right">
+      {% if current_user %}
+      <a href="/compose">{{ _("New post") }}</a> -
+      <a href="/auth/logout?next={{ url_escape(request.uri) }}">{{ _("Sign out") }}</a>
+      {% else %}
+      {% raw _('<a href="%(url)s">Sign in</a> to compose/edit') % {"url": "/auth/login?next=" +
+      url_escape(request.uri)} %}
+      {% end %}
     </div>
-    <div id="content">{% block body %}{% end %}</div>
+    <h1><a href="/">{{ escape(handler.settings["blog_title"]) }}</a></h1>
+  </div>
+  <div class="left-menu">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation" class="active"><a href="#">Home</a></li>
+      <li role="presentation"><a href="top">Top</a></li>
+      <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+  </div>
+  <div class="content">{% block body %}{% end %}</div>
 </div>
-{% block bottom %}{% end %}
+
+{% block bottom %}
+{% block footer %}
+
+{% end %}
+{% end %}
+{% block end_scripts %}{% end %}
 </body>
 </html>

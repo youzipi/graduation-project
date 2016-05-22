@@ -6,13 +6,14 @@
 
 <div id="app">
     <li v-for="paper in papers">
-        <label for="">{{! paper.citations}}</label>
-        <a href="/p/{{! paper._id.$oid }}">
-            {{! paper.title }}
+        <label for="">${ paper.citations}</label>
+        <a href="/p/${ paper._id.$oid }">
+            ${ paper.title }
         </a>
     </li>
 </div>
 <script>
+    Vue.config.delimiters = ['${', '}'];
     new Vue({
                 el: '#app',
                 ready: function () {

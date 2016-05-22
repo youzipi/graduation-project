@@ -13,7 +13,7 @@ from scrapy import Request,FormRequest
 from lxml import html
 
 
-# In[139]:
+# In[1]:
 
 headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -55,36 +55,33 @@ postreq.encoding = 'utf8'
 
 # In[157]:
 
-# sc_resp = FormRequest(url='https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi',
-#                       #method="POST",
-#                       headers=headers,
-#                       formdata=data)
+sc_resp = FormRequest(url='https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi',
+                      #method="POST",
+                      headers=headers,
+                      formdata=data)
 
 
 # In[158]:
 
-# sc_resp.cookies
+sc_resp.cookies
 
 
 # In[109]:
 
 # print postreq.text
-# s.close()
+s.close()
 
 
 # In[156]:
 
-# s.cookies
+s.cookies
 
 
-# In[118]:
-
-print postreq.cookies.get_dict()
-
+# postreq.cookies.get_dict()
 
 # In[119]:
 
-# postreq.status_code
+postreq.status_code
 
 
 # In[120]:
@@ -98,35 +95,35 @@ req = s.get(search_url)
 
 # In[121]:
 
-# req.url
+req.url
 
 
 # In[126]:
 
-# sc_cookies = s.cookies
-# s.close()
-# sc_resp = Request(url=search_url, headers=headers,
-#                         cookies=sc_cookies
-#                         )
+sc_cookies = s.cookies
+s.close()
+sc_resp = Request(url=search_url, headers=headers,
+                        cookies=sc_cookies
+                        )
 
 
 # In[127]:
 
-# sc_resp.body
+sc_resp.body
 
 
 # In[75]:
 
 content = req.text
-#print content
+print content
 
 
 # In[106]:
 
 c = Selector(text=content)
 
-#tables = c.xpath('/html/body/table').extract()
-#print len(tables)
+tables = c.xpath('/html/body/table').extract()
+print len(tables)
 #print tables
 # sections = c.xpath('/html/body/table[4]') #？？
 # sections = c.xpath('/html/body/table[4]/tr[3]/td/table')
@@ -147,23 +144,22 @@ len(urls)
 
 # In[92]:
 
-print target_url.extract()
+target_url.extract()
 
 
 # In[48]:
 
-# trs = sections[2].xpath('./tbody/tr')
+trs = sections[2].xpath('./tbody/tr')
 
-# pairs = trs[0].xpath('./td')
-# # print trs[0].xpath('./td').extract()
-# # print pairs[1].xpath('text()').extract()
-# # print pairs[1].extract()        # <td width="80%">INTERFERON-STIMULATED GENES: A COMPLEX <strong>WEB</strong> OF HOST DEFENSES </td>
-# for p in trs:
-#     pair = p.xpath('./td')
-#     # print pair.extract()
-#     if len(pair) < 2:
-#         continue
-#     print pair[0].extract()
-#     print pair[1].extract()
+pairs = trs[0].xpath('./td')
+# print trs[0].xpath('./td').extract()
+# print pairs[1].xpath('text()').extract()
+# print pairs[1].extract()        # <td width="80%">INTERFERON-STIMULATED GENES: A COMPLEX <strong>WEB</strong> OF HOST DEFENSES </td>
+for p in trs:
+    pair = p.xpath('./td')
+    # print pair.extract()
+    if len(pair) < 2:
+        continue
+    print pair[0].extract()
+    print pair[1].extract()
 
-s.close()

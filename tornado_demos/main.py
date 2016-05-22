@@ -12,9 +12,9 @@ import tornado.web
 
 from tornado.options import define, options
 
-from handlers import api
+from handlers import apis, views
 
-define("port", default=8888, help="run on the given port", type=int)
+define("port", default=8889, help="run on the given port", type=int)
 define("mongo_host", default="127.0.0.1", help="database host")
 define("mongo_port", default=27017, help="database port")
 define("db_name", default="esi", help="database name")
@@ -29,8 +29,11 @@ executor = concurrent.futures.ThreadPoolExecutor(2)
 class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
-            (r"/", api.HomeHandler),
-            (r"/v1/top", api.TopHandler),
+            (r"/", views.HomeHandler),
+            (r"/top", views.TopHandler),
+            (r"/p/(?P<paper_id>.*)", views.PaperHandler),
+            (r"/v1/top", apis.TopHandler),
+            (r"/v1/p/(?P<paper_id>.*)", apis.PaperHandler),
             # (r"/entry/([^/]+)", api.EntryHandler),
 
         ]
@@ -42,7 +45,6 @@ class Application(tornado.web.Application):
             cookie_secret="__TODO:_GENERATE_YOUR_OWN_RANDOM_VALUE_HERE__",
             debug=True,
             autosecape=None,
-
         )
         super(Application, self).__init__(handlers, **settings)
 
