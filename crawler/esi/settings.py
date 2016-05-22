@@ -10,8 +10,10 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 import logging
 
-file_handler = logging.handlers.RotatingFileHandler('esi.log', backupCount=5)
+import datetime
 
+file_handler = logging.handlers.RotatingFileHandler(datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S.log"),
+                                                    backupCount=5)
 
 # 禁止重定向
 # REDIRECT_ENABLED = False
@@ -66,8 +68,8 @@ CONCURRENT_REQUESTS = 100
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   # 'esi.middlewares.MyCustomDownloaderMiddleware': 543,
-   #  'esi.middlewares.RandomUserAgent': 1,
+    # 'esi.middlewares.MyCustomDownloaderMiddleware': 543,
+    #  'esi.middlewares.RandomUserAgent': 1,
     'esi.middlewares.ProxyMiddleware': 100,
     # 'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
     'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
