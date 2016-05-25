@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div id="app">
+  <h1>{{ paper.title }}</h1>
+
+  <span class="label label-primary">{{ paper.citations }}</span>
+  <span class="label label-default">year={{ paper.pub_year }}</span>
+  <br>
+
+  <h3>
+    作者:
+  </h3>
+  {% for author in paper.authors %}
+  <span class="">  {{ author }}</span>
+  {% end %}
+
+  <h3>
+    摘要:
+  </h3>
+  <p>{{ paper.abstract }}</p>
+
+
+  <h3>
+    关键字:
+  </h3>
+  {% for item in paper.keywords %}
+  <span class="">  {{ item }}</span>
+  {% end %}
+
+
+  <h3>
+    研究领域:
+  </h3>
+  {% for item in paper.research_areas %}
+  <span class="">  {{ item }}</span>
+  {% end %}
+
+  <!--<p> {{ paper.year_citations }}</p>-->
+  <h3>
+    历年被引用纪录
+  </h3>
+  <table id="year_citations" class="table table-bordered">
+    <!--<tr>-->
+    <!--{% for item in paper.year_citations %}-->
+    <!--<span class="">  {{ item }}</span>-->
+    <!--<span class="">  {{ paper.year_citations[item] }}</span>-->
+    <!--{% end %}-->
+
+    <!--</tr>-->
+
+  </table>
+  <div id="chart" style="height:200px;width=500px"></div>
+  <!--<input type="hidden" id="year_citations" value="{{ paper.year_citations }}">-->
+
+
+</div>
+{% block footer %}
+<script src="../static/lib/echarts.min.js"></script>
+
+<script>
+  var year_citations = {{paper.year_citations}};
+
+  var years = _.range(2005, 2016);
+
+  var cleaned_data = years.map(function (a) {
+    return year_citations[a]
+  });
+
+  var trs = _.template('<tbody><tr><% _.forEach(years, function(year) { %><td><%- year %></td><% }); %></tr>' +
+      '<tr><% _.forEach(cleaned_data, function(ci) { %><td><%- ci %></td><% }); %></tr><tbody>');
+
+  trs({
+    'years': years,
+    'cleaned_data': cleaned_data
+  });
+  $('#year_citations').html(trs());
+
+
+  var option = {
+    tooltip: {
+      trigger: 'axis'
+    },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: years
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: [
+      {
+        type: 'line',
+        data: cleaned_data
+      },
+
+    ]
+  };
+  var myChart = echarts.init(document.getElementById('chart'));
+
+  myChart.setOption(option);　　//设置全部参数属性
+
+
+</script>
+{% end %}
+{% end %}
+
+

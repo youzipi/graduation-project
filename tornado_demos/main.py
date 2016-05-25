@@ -12,6 +12,7 @@ import tornado.web
 
 from tornado.options import define, options
 
+from crawler.esi.settings import MONGO_HOST
 from handlers import apis, views
 
 define("port", default=8889, help="run on the given port", type=int)
@@ -31,8 +32,12 @@ class Application(tornado.web.Application):
         handlers = [
             (r"/", views.HomeHandler),
             (r"/top", views.TopHandler),
+            (r"/crawl", views.CrawlHandler),
+            (r"/crawl_status", views.CrawlStatusHandler),
             (r"/p/(?P<paper_id>.*)", views.PaperHandler),
-            (r"/v1/top", apis.TopHandler),
+
+            (r"/v1/crawl_start", apis.CrawlStartHandler),
+            (r"/v1/top/p/(?P<page_num>.*)", apis.TopHandler),
             (r"/v1/p/(?P<paper_id>.*)", apis.PaperHandler),
             # (r"/entry/([^/]+)", api.EntryHandler),
 

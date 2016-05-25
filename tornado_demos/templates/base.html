@@ -8,29 +8,23 @@
   <!--<link rel="stylesheet" href="{{ static_url('css/base.css') }}" type="text/css">-->
   <link rel="stylesheet" href="../static/css/base.css" type="text/css">
 
+  <script src="../static/lib/jquery-2.2.3.min.js"></script>
+  <script src="../static/lib/lodash.js"></script>
   <script src="../static/lib/vue.js"></script>
   <script src="../static/lib/vue-resource.js"></script>
   {% block head %}{% end %}
 </head>
 <body>
 
+<div class="header">
+  <h1><a href="/">{{ escape(handler.settings["blog_title"]) }}</a></h1>
+</div>
 <div class="body">
-  <div class="header">
-    <div style="float:right">
-      {% if current_user %}
-      <a href="/compose">{{ _("New post") }}</a> -
-      <a href="/auth/logout?next={{ url_escape(request.uri) }}">{{ _("Sign out") }}</a>
-      {% else %}
-      {% raw _('<a href="%(url)s">Sign in</a> to compose/edit') % {"url": "/auth/login?next=" +
-      url_escape(request.uri)} %}
-      {% end %}
-    </div>
-    <h1><a href="/">{{ escape(handler.settings["blog_title"]) }}</a></h1>
-  </div>
   <div class="left-menu">
     <ul class="nav nav-pills nav-stacked">
       <li role="presentation" class="active"><a href="#">Home</a></li>
-      <li role="presentation"><a href="top">Top</a></li>
+      <li role="presentation"><a href="/top">Top</a></li>
+      <li role="presentation"><a href="/crawl">爬取</a></li>
       <li role="presentation"><a href="#">Messages</a></li>
     </ul>
   </div>

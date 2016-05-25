@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../static/lib/echarts.min.js"></script>
+  <script src="../static/lib/dataTool.js"></script>
+  <script src="../static/lib/jquery-2.2.3.min.js"></script>
+</head>
+<body>
+<div id="main" style="height:600px;"></div>
+
+<script type="text/javascript">
+
+  var dom = document.getElementById("main");
+  var myChart = echarts.init(dom);
+  var app = {};
+  option = null;
+  myChart.showLoading();
+  $.get('data/les-miserables.gexf', function (xml) {
+    myChart.hideLoading();
+
+    graph = echarts.dataTool.gexf.parse(xml);
+    a = graph;
+    categories = [];
+    for (var i = 0; i < 11; i++) {
+      categories[i] = {
+        name:  i + 'X'
+      };
+    }
+    graph.nodes.forEach(function (node) {
+      node.itemStyle = null;
+      node.value = node.symbolSize;
+      node.label = {
+        normal: {
+          show: node.symbolSize > 30
+        }
+      };
+      node.category = parseInt(node.value/10)+1;
+    });
+    option = {
+      title: {
+        text: 'Les Miserables',
+        subtext: 'Default layout',
+        top: 'bottom',
+        left: 'right'
+      },
+      tooltip: {},
+      legend: [{
+        // selectedMode: 'single',
+        data: categories.map(function (a) {
+          return a.name;
+        })
+      }],
+      animationDuration: 1500,
+      animationEasingUpdate: 'quinticInOut',
+      series: [
+        {
+          name: 'Les Miserables',
+          type: 'graph',
+          layout: 'none',
+          data: graph.nodes,
+          links: graph.links,
+          categories: categories,
+          roam: true,
+          label: {
+            normal: {
+              position: 'right',
+              formatter: '{b}'
+            }
+          },
+          lineStyle: {
+            normal: {
+              curveness: 0.3
+            }
+          }
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+  }, 'xml');
+  ;
+  if (option && typeof option === "object") {
+    var startTime = +new Date();
+    myChart.setOption(option, true);
+    var endTime = +new Date();
+    var updateTime = endTime - startTime;
+    console.log("Time used:", updateTime);
+  }
+</script>
+</body>
+</html>

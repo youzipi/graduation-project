@@ -1,0 +1,111 @@
+{% autoescape message %}
+{% extends "base.html" %}
+
+{% block body %}
+<v-table :columns="columns" :data-source="dataSource"></v-table>
+
+<div id="app">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <!--<th>#</th>-->
+      <th>citations</th>
+      <th>title</th>
+      <th>pub_year</th>
+      <th>authors</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="paper in papers">
+      <th scope="row">${ paper.citations }</th>
+      <td><a href="/p/${ paper.wos_no }">${ paper.title }</a></td>
+      <!--<td><a href="/p/${ paper._id.$oid }">${ paper.title }</a></td>-->
+      <!--<td v-for="author in paper.authors">-->
+      <!--<span>${ author }</span>-->
+      <!--</td>-->
+      <td>${ paper.pub_year }</td>
+      <td>${ paper.authors.length }</td>
+    </tr>
+    <tr>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<ul id="page-bar" class="pagination">
+  <li><a href="#" @click="setPage(1)">首页</a></li>
+  <li><a href="#" @click="setPage(curNum-1)">上一页</a></li>
+  <li v-for="n in totalNum">
+    <a href="#" v-text="n" @click="setPage(n)" :class="{ curPage: n+1 == curNum }"></a>
+  </li>
+  <li><a href="#" @click="setPage(curNum+1)">下一页</a></li>
+</ul>
+{% block footer %}
+<!--<q-footer></q-footer>-->
+{% end %}
+<script>
+  Vue.config.delimiters = ['${', '}'];
+
+  var app = new Vue({
+        el: '#app',
+        data: {
+          papers: null
+        },
+
+        ready: function () {
+          this.update(1);
+        },
+        methods: {
+
+          update: function (pageNum) {
+            this.$http.get('/v1/top/p/' + pageNum)
+                .then(function (response) {
+//                  console.log(response.data);
+                  this.$set('papers', response.data);
+
+                })
+                .catch(function (response) {
+                  console.log(response.status);
+                  console.log(response.data);
+                  console.log('fail');
+                })
+          }
+          //        components: {
+          //          'q-footer': require('./components/footer.vue')
+          //        }
+        }
+      }
+  );
+
+  var navBar = new Vue({
+    el: '#page-bar',
+    data: {
+      totalNum: [1, 2, 3, 4, 5], //总页数
+      curNum: 1 //当前页码
+    },
+    methods: {
+      //切换页码
+      setPage: function (num) {
+        app.update(num);
+        //页码小于等于1
+        if (num <= 1) {
+          return this.curNum = 1;
+        }
+        //页码大于总页数
+        if (num >= this.totalNum) {
+          return this.curNum = this.totalNum;
+        }
+        //页码赋给当前页
+        this.curNum = num;
+        if (num > 3) {
+          this.totalNum = [num - 2, num - 1, num, num + 1, num + 2];
+        }
+      }
+    }
+  })
+</script>
+
+{% end %}
+
+
