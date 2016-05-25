@@ -27,6 +27,13 @@ class TopHandler(ApiHandler):
         self.finish(dumps(papers))
 
 
+class TopCountHandler(ApiHandler):
+    def get(self):
+        post = self.db.test
+        count = post.find().count()
+        self.finish(unicode(count))
+
+
 class PaperHandler(ApiHandler):
     def get(self, paper_id):
         post = self.db.test  # type:pymongo.cursor.Cursor
