@@ -49,3 +49,7 @@ class CrawlHandler(ViewHandler):
 
 class CrawlStatusHandler(ViewHandler):
     view = 'crawl_status'
+
+
+class AreaLinkHandler(ViewHandler):
+    view = 'research_area_link'

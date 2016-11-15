@@ -35,10 +35,14 @@ class Application(tornado.web.Application):
             (r"/crawl", views.CrawlHandler),
             (r"/crawl_status", views.CrawlStatusHandler),
             (r"/p/(?P<paper_id>.*)", views.PaperHandler),
+            (r"/research_area_link", views.AreaLinkHandler),
 
             (r"/v1/crawl_start", apis.CrawlStartHandler),
-            (r"/v1/top/p/(?P<page_num>.*)", apis.TopHandler),
+            (r"/v1/top/p/(?P<page_num>[0-9]*)", apis.TopHandler),
+            (r"/v1/top/p/count", apis.TopCountHandler),
             (r"/v1/p/(?P<paper_id>.*)", apis.PaperHandler),
+
+            (r"/v1/research_area_link", apis.AreaLinkHandler),
             # (r"/entry/([^/]+)", api.EntryHandler),
 
         ]

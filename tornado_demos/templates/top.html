@@ -36,12 +36,12 @@
 <ul id="page-bar" class="pagination">
   <li><a href="#" @click="setPage(1)">首页</a></li>
   <li><a href="#" @click="setPage(curNum-1)">上一页</a></li>
-  <li v-for="n in totalNum" :class="{ active: n == curNum }">
+  <li v-for="n in totalNum" :class="{ active: n == curPage }">
     <a href="#" v-text="n" @click="setPage(n)"></a>
   </li>
   <li><a href="#" @click="setPage(curNum+1)">下一页</a></li>
-  itemCount = ${ itemCount }
-  pageCount = ${ pageCount }
+  <span>总论文数 = ${ itemCount }</span>
+  <span>总页数 = ${ pageCount }</span>
 
 </ul>
 {% block footer %}
@@ -111,16 +111,19 @@
         app.update(num);
         //页码小于等于1
         if (num <= 1) {
-          return this.curNum = 1;
+          return this.curPage = 1;
         }
         //页码大于总页数
-        if (num >= this.totalNum) {
-          return this.curNum = this.totalNum;
+        if (num >= this.pageCount) {
+          return this.curPage = this.totalNum;
         }
         //页码赋给当前页
-        this.curNum = num;
+        this.curPage = num;
         if (num > 3) {
           this.totalNum = [num - 2, num - 1, num, num + 1, num + 2];
+        }
+        else{
+          this.totalNum = [1, 2, 3, 4, 5];
         }
       }
     }

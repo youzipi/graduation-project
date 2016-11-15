@@ -9,3 +9,5 @@ temp/
 *.xsh
 
 Links
+node_modules
+*.log

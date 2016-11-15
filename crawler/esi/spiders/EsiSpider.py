@@ -26,7 +26,6 @@ logger.setLevel(logging.DEBUG)
 
 
 class EsiSpider(CrawlSpider, LogoutMixin):
-
     # class EsiSpider(CrawlSpider):
     name = "esi"
 
@@ -85,11 +84,17 @@ class EsiSpider(CrawlSpider, LogoutMixin):
             FormRequest(
                 "https://vpn.nuist.edu.cn/dana-na/auth/url_default/login.cgi",
                 formdata=login_form_data,
-                callback=self.after_login
+                callback=self.create_session,
             )
         ]
 
-    def after_login(self, response):
+    def create_session(self, response):
+        yield Request(
+            "https://vpn.nuist.edu.cn/,DanaInfo=.awxyC0jhvntxz8ysswvRv87+?DestApp=ESI",
+            callback=self.session_created,
+        )
+
+    def session_created(self, response):
         # for url in self.start_urls:
         # yield self.make_requests_from_url(url)
         # yield self.make_requests_from_url(self.search_url.format(currpage=self.currpage))
@@ -97,10 +102,11 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         # logger.debug(("cookies", response.request.cookies))  # todo get cookie
         logger.info(("after_login.cookies=", response.headers.get('Set-Cookie')))
 
-        self.thread.start()
+        # self.thread.start()
+
 
         for i in xrange(176):
-            #176 pages
+            # 176 pages
             try:
                 next_url = self.search_url.format(currpage=self.currpage)
 
@@ -108,7 +114,7 @@ class EsiSpider(CrawlSpider, LogoutMixin):
                 # next_url = self.search_url.format(currpage=self.currpage)
                 logger.debug(('next_page', self.currpage))
                 # logger.debug(('next_url', next_url))
-                yield Request(next_url, callback=self.parse)
+                yield Request(next_url, callback=self.parse, meta={'page': i})
             except ValueError:
                 logger.debug(('extra_url', response.url))
 
@@ -162,9 +168,10 @@ class EsiSpider(CrawlSpider, LogoutMixin):
 
         if length > 0:
             # if target_url.size > 0:
+            logger.debug("parse proxy=%s", response.meta.get('proxy'))
+            logger.debug("parse page=%d", response.meta.get('page'))
             for i in range(length):
                 wos_link = wos_links[i]
-                logger.debug("parse proxy=%s",response.meta['proxy'])
                 wos_no = re.search("KeyUT=([\d]*)&", wos_link).group(1)
                 citations = int(re.sub('[,|\t]', '', citations_list[i]))
 
@@ -187,7 +194,7 @@ class EsiSpider(CrawlSpider, LogoutMixin):
                 # else:
                 # yield Request(wos_link, callback=self.parse_wos_page, meta={'item': item})
 
-                if self.post.find({'wos_no': wos_no}).count() == 0: #  该论文不存在
+                if self.post.find({'wos_no': wos_no}).count() == 0:  # 该论文不存在
                     # yield Request(wos_link, callback=self.parse_wos_page, meta={'item': item})
 
                     yield Request(year_citations_link, callback=self.parse_year_citations, meta={'item': item})
@@ -214,7 +221,7 @@ class EsiSpider(CrawlSpider, LogoutMixin):
     def parse_wos_page(self, response):
         logger.debug('===parse_wos_page===')
         # logger.info(("parse_wos_page.cookies=", response.headers['Set-Cookie']))
-        logger.debug("parse_wos_page proxy=%s", response.meta['proxy'])
+        logger.debug("parse_wos_page proxy=%s", response.meta.get('proxy'))
 
         item = response.meta['item']
 
@@ -229,21 +236,24 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         journal = c.css(
             '.NEWfullRecord > form[name=correction_form]>input[name="00N70000002C0wf"]::attr(value)').extract()
 
-
         publisheds = c.xpath(
             '//span[contains(@class,"FR_label") and contains(text(),"Published")]/../value/text()').extract()
         abstracts = c.xpath('//div[contains(@class,"title3") and contains(text(),"Abstract")]/../p/text()').extract()
-        keywords = c.xpath('//span[contains(@class,"FR_label") and contains(text(),"KeyWords")]/../a/text()').extract()
+
+        # Key
+        # <span class="FR_label">KeyWords Plus:</span>
+        # <span class="FR_label">Author Keywords:</span>
+        keywords = c.xpath('//span[contains(@class,"FR_label") and contains(text(),"Key")]/../a/text()').extract()
 
         research_areas = c.xpath(
             '//span[contains(@class,"FR_label") and contains(text(),"Research Areas")]/../text()').extract()
         research_areas = list_get(research_areas, 1)
 
         # authors = c.xpath('//span[contains(@class,"FR_label") and contains(text(),"By")]/../a/text()').extract()
-        authors = c.xpath('//span[contains(@class,"FR_label") and contains(text(),"By")]/..//a[@title]/text()').extract()
+        authors = c.xpath(
+            '//span[contains(@class,"FR_label") and contains(text(),"By")]/..//a[@title]/text()').extract()
 
-
-        addresses = c.xpath('//*[@class="fr_address_row2"]/a/text()').extract()     # List(str)
+        addresses = c.xpath('//*[@class="fr_address_row2"]/a/text()').extract()  # List(str)
 
         cleaned_addresses = map(lambda x: re.sub('\[ \d \] ', '', x), addresses)
 
@@ -290,7 +300,7 @@ class EsiSpider(CrawlSpider, LogoutMixin):
         # year_citations_list = c.xpath('/html/body/table[4]//td//tr/td[1]/b[contains(text(),"Citations")]/../a/@href').extract()
 
     def parse_year_citations(self, response):
-        logger.debug("parse_year_citations proxy=%s",response.meta['proxy'])
+        logger.debug("parse_year_citations proxy=%s", response.meta.get('proxy'))
 
         item = dict()
         item = response.meta['item']
@@ -317,7 +327,7 @@ class EsiSpider(CrawlSpider, LogoutMixin):
 
 def list_get(l, i=0):
     try:
-        return l[i]
+        return l[i].strip()
     except IndexError:
         return None
 

@@ -12,39 +12,41 @@ import logging
 
 import datetime
 
-file_handler = logging.handlers.RotatingFileHandler(datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S.log"),
-                                                    backupCount=5)
+file_handler = logging.handlers.RotatingFileHandler("logs/" + datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S.log"),backupCount=5)
 
 # 禁止重定向
 # REDIRECT_ENABLED = False
 
 # LOG_LEVEL = 'INFO'
 
-
 BOT_NAME = 'esi'
 
-SPIDER_MODULES = ['esi.spiders']
-NEWSPIDER_MODULE = 'esi.spiders'
+# SPIDER_MODULES = ['esi.spiders']
+# NEWSPIDER_MODULE = 'esi.spiders'
+SPIDER_MODULES = ['crawler.esi.spiders']
+NEWSPIDER_MODULE = 'crawler.esi.spiders'
 
 # MongoDB config
 MONGO_HOST = '127.0.0.1'
 MONGO_PORT = 27017
 MONGO_DBNAME = 'esi'
 # MONGO_DOCNAME = 'test'
-MONGO_DOCNAME = 'test0515'
+MONGO_DOCNAME = 'test0527'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'esi (+http://www.yourdomain.com)'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 100
+CONCURRENT_REQUESTS = 50
 
+
+RETRY_TIMES = 5
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY=3
+# DOWNLOAD_DELAY=2
 # The download delay setting will honor only one of:
-# CONCURRENT_REQUESTS_PER_DOMAIN=16
+# CONCURRENT_REQUESTS_PER_DOMAIN=20
 # CONCURRENT_REQUESTS_PER_IP=16
 
 # Disable cookies (enabled by default)
@@ -70,8 +72,9 @@ CONCURRENT_REQUESTS = 100
 DOWNLOADER_MIDDLEWARES = {
     # 'esi.middlewares.MyCustomDownloaderMiddleware': 543,
     #  'esi.middlewares.RandomUserAgent': 1,
-    'esi.middlewares.ProxyMiddleware': 100,
     # 'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
+    'esi.middlewares.ProxyMiddleware': 100,
+
     'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
 }
 
@@ -108,3 +111,6 @@ ITEM_PIPELINES = {
 # HTTPCACHE_DIR='httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES=[]
 # HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
+DOWNLOAD_HANDLERS = {
+  's3': None,
+}

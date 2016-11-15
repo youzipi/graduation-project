@@ -11,12 +11,22 @@ class BaseHandler(RequestHandler):
 
 
 class ApiHandler(BaseHandler, FlashMessageMixin):
-    def write_json(self, data, status_code=200, msg='success'):
+    data = {}
+    db_name = ''
+    _post = None
+
+    @property
+    def post(self):
+        if self._post is None:
+            self._post = self.db[self.db_name]
+        return self._post
+
+    def write_json(self, data, status=1, msg='success'):
         self.finish(dumps({
-            'code': status_code,
+            'status': status,
             'msg': msg,
             'data': data
-        }
+        },
         ))
 
 

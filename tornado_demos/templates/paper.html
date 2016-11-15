@@ -6,7 +6,7 @@
   <h1>{{ paper.title }}</h1>
 
   <span class="label label-primary">{{ paper.citations }}</span>
-  <span class="label label-default">year={{ paper.pub_year }}</span>
+  <span class="label label-info">year={{ paper.pub_year }}</span>
   <br>
 
   <h3>
@@ -26,7 +26,7 @@
     关键字:
   </h3>
   {% for item in paper.keywords %}
-  <span class="">  {{ item }}</span>
+  <span class="tag">  {{ item }}</span>
   {% end %}
 
 
@@ -34,7 +34,7 @@
     研究领域:
   </h3>
   {% for item in paper.research_areas %}
-  <span class="">  {{ item }}</span>
+  <span class="tag bold">  {{ item }}</span>
   {% end %}
 
   <!--<p> {{ paper.year_citations }}</p>-->
@@ -56,6 +56,8 @@
 
 
 </div>
+{% end %}
+
 {% block footer %}
 <script src="../static/lib/echarts.min.js"></script>
 
@@ -68,14 +70,14 @@
     return year_citations[a]
   });
 
-  var trs = _.template('<tbody><tr><% _.forEach(years, function(year) { %><td><%- year %></td><% }); %></tr>' +
+  var trs = _.template('<tbody><tr><% _.forEach(years, function(year) { %><th><%- year %></th><% }); %></tr>' +
       '<tr><% _.forEach(cleaned_data, function(ci) { %><td><%- ci %></td><% }); %></tr><tbody>');
 
   trs({
     'years': years,
     'cleaned_data': cleaned_data
   });
-  $('#year_citations').html(trs());
+  $('#year_citations').append(trs());
 
 
   var option = {
@@ -104,7 +106,6 @@
 
 
 </script>
-{% end %}
 {% end %}
 
 

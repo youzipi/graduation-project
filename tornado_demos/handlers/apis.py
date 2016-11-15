@@ -50,3 +50,50 @@ class CrawlStartHandler(ApiHandler):
     def get(self):
         start()
         self.finish("success")
+
+
+class AreaLinkHandler(ApiHandler):
+    db_name = 'area_rank'
+
+    def get(self):
+        self.data
+        research_areas = ['no-data']
+        def _area_project(n, i):
+            """
+            {_id:computer science,count:2222},
+            => {
+                id:i,
+                value:computer science,
+                count:2222
+            }
+            """
+            research_areas.append(n['_id'])
+            n['value'] = n['_id']
+            n['id'] = i
+            del n['_id']
+
+            return n
+
+        def _link_project(n, i):
+            n['id'] = i
+            n['source'] = research_areas.index(n['source'])
+            n['target'] = research_areas.index(n['target'])
+            del n['_id']
+
+            return n
+
+        area_rank = self.post.find().sort('count', pymongo.DESCENDING)
+        ar_len = self.post.find().count()
+        area_rank1 = map(_area_project, area_rank, range(1, ar_len + 1))
+
+        links = self.db['area_relation'].find()
+        links_len = self.db['area_relation'].find().count()
+        links1 = map(_link_project, links, range(1, links_len + 1))
+
+        self.data['nodes'] = area_rank1
+        self.data['links'] = links1
+
+        if not self.data:
+            self.write_json(status=-1, msg='no data', data=self.data)
+        # self.finish(dumps(self.data))
+        self.write_json(data=self.data)

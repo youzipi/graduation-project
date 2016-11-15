@@ -1,27 +1,98 @@
-var top_20_keywords = db.getCollection('test').aggregate(
-//     {'$unwind': '$cleaned_research_areas'}
-    {'$unwind': '$cleaned_keywords'}
-//     , {
-//         $match: {
-//             pub_year: 201
-//         }
-//     }
-    , {
+db.test.aggregate([{
+    $unwind: "$research_areas"
+},
+    {
+        $lookup: {
+            from: "test",
+            localField: "_id",
+            foreignField: "_id",
+            as: "items"
+        }
+    },
+    {
+        $unwind: "$items"
+    },
+    {
+        $unwind: "$items.research_areas"
+    },
+    {
+        $redact: {
+            $cond: {
+                if: {
+                    $cmp: ["$research_areas", "$items.research_areas"]
+                },
+                then: "$$DESCEND",
+                else: "$$PRUNE"
+            }
+        }
+    },
+    {
         $group: {
-            _id: {'keywords': '$cleaned_keywords'},
-//             _id: {'keywords': '$cleaned_research_areas'},
-            paper_count: {$sum: 1},
-            per_citations: {$avg: '$citations'},
-//         papers:{$addToSet:'$title'}
+            _id: {
+                k1: "$research_areas",
+                k2: "$items.research_areas",
+            },
+            items: {
+                $sum: 0.5
+            }
+        }
+    },
+    {
+        $sort: {
+            "_id": 1
+        }
+    },
+    {
+        $project: {
+            _id: 1,
+            items: 1,
+            a: {
+                $cond: {
+                    if: {
+                        $eq: [{
+                            $cmp: ["$_id.k1", "$_id.k2"]
+                        }, 1]
+                    },
+                    then: "$_id.k2",
+                    else: "$_id.k1"
+                }
+            },
+            b: {
+                $cond: {
+                    if: {
+                        $eq: [{
+                            $cmp: ["$_id.k1", "$_id.k2"]
+                        }, -1]
+                    },
+                    then: "$_id.k2",
+                    else: "$_id.k1"
+                }
+            },
+
+        }
+    },
+    {
+        $group: {
+            _id: {
+                k1: "$a",
+                k2: "$b",
+            },
+            items: {
+                $sum: "$items"
+            }
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            item1: "$_id.k1",
+            item2: "$_id.k2",
+            count: "$items"
+        }
+    },
+    {
+        $sort: {
+            count: -1,
         }
     }
-    , {$sort: {paper_count: -1}}
-//     ,{$limit:20}
-
-);
-// print('keyword  paper_count     per_citations');
-top_20_keywords.forEach(function (d) {
-//     printjson(d);
-    print(d._id.keywords,d.paper_count,d.per_citations);
-});
-
+]);

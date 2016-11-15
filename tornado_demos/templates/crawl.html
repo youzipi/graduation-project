@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div id="app">
+  <button class="btn btn-default" onclick="startTask();">启动爬虫</button>
+
+</div>
+{% block footer %}
+<script>
+  var startTask = function () {
+    $.ajax({
+      type: 'GET',
+      url: 'v1/crawl_start',
+      error: function () {
+        console.log('启动爬虫任务失败')
+      },
+      success: function (data) {
+        if (data == 'success') {
+          console.log('启动爬虫任务成功');
+          window.location.href = '/crawl_status';
+        }
+        else {
+          console.log('启动爬虫任务失败')
+        }
+
+      }
+    })
+  };
+</script>
+{% end %}
+{% end %}
+
+

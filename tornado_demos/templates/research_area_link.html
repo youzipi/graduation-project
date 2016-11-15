@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+<div id="chart" style="height:600px;width:1000px"></div>
+{% end %}
+
+{% block footer %}
+<script src="../static/lib/dataTool.js"></script>
+
+<script src="../static/lib/echarts.min.js"></script>
+<script type="text/javascript">
+  var dom = document.getElementById("chart");
+  var myChart = echarts.init(dom);
+  var app = {};
+  option = null;
+  myChart.showLoading();
+  $.get('v1/research_area_link', function (resp_data) {
+    var data = JSON.parse(resp_data);
+    if (data.status == -1) {
+      return false;
+    }
+    graph = data.data;
+    categories = [];
+
+    graph.nodes = graph.nodes.slice(0, 10);
+    myChart.hideLoading();
+
+
+    graph.nodes.forEach(function (node) {
+      node.itemStyle = null;
+      node.symbolSize = Math.sqrt(node.count);
+      node.name = node.value;
+      node.value = node.count;
+      node.category = node.name;
+
+      categories.push(
+          {name: node.name}
+      );
+
+      node.label = {
+        normal: {
+          show: node.value > 500
+        }
+      };
+    });
+    graph.links.forEach(function (link) {
+      link.lineStyle = {
+        normal: {
+          width: Math.sqrt(link.count)
+        }
+      }
+    });
+    option = {
+      legend: [{
+        // selectedMode: 'single',
+        data: categories.map(function (a) {
+          return a.name;
+        })
+      }],
+      tooltip: {},
+      title: {
+        text: 'ESI计算机论文研究领域关系图(前10)',
+        subtext: 'xxxxx',
+        top: 'bottom',
+        left: 'right'
+      },
+      animationDuration: 1500,
+      animationEasingUpdate: 'quinticInOut',
+      series: [
+        {
+          type: 'graph',
+          categories: categories,
+
+//          layout: 'none',
+          layout: 'circular',
+//          layout: 'force',
+//          force: {
+//            initLayout: 'circular',
+//            repulsion: 200,
+//            gravity: 0.1
+//          },
+          data: graph.nodes,
+          links: graph.links,
+          roam: true,
+
+          label: {
+            normal: {
+              show: false,
+              position: 'right',
+
+              formatter: '{b}:{c}'
+            }
+          },
+          edgeLabel: {
+            normal: {
+              show: true,
+              formatter: '{c}'
+            }
+          },
+          lineStyle: {
+            normal: {
+              curveness: 0.2
+            }
+          }
+        }
+      ]
+    };
+
+    myChart.setOption(option);
+  });
+</script>
+{% end %}
+
+
